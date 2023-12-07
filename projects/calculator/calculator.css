@@ -1,0 +1,54 @@
+#backgroundVideo {
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+.calculator {
+
+    position: fixed;
+
+    background: rgb(0, 0, 0, 0.5);
+    color: whitesmoke;
+
+    margin: 2em 50%;
+
+    transform: translateX(-50%);
+
+    width: 25%;
+
+    border-radius: 10px;
+
+}
+
+.keypad {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+
+    margin-top: 15.6em;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.keypad button {
+
+    border-radius: 5px;
+
+    width: 80%;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+
+}
