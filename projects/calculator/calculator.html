@@ -3,54 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>Calculator</title>
 
     <link rel="stylesheet" href="./calculator.css">
 </head>
 
 <body>
 
-    <main>
+    <header>
 
-        <video autoplay muted loop id="backgroundVideo">
+        <video autoplay loop muted class="backgroundVideo">
             <source src="./materials/videos/Background Video cut version.mp4" type="video/mp4">
         </video>
-    
+
+    </header>
+
+    <main>
+
         <div class="calculator">
 
-            <div class="output">
-
-                <div data-previous-operand class="previous-operand"></div>
-                <div data-current-operand class="current-operand"></div>
+            <div class="display">
+                
+                <input type="text" placeholder="0" id="input" disabled>
 
             </div>
+            
+            <div class="buttons">
 
-            <div class="keypad">
+                <button class="topOperator" value="(">(</button>
+                <button class="topOperator" value=")">)</button>
+                
+                <button id="clear" class="topOperator">C</button>
+                <button id="delete" class="operator">DEL</button>
+                
+                <button value="7" class="number">7</button>
+                <button value="8" class="number">8</button>
+                <button value="9" class="number">9</button>
+                <button class="sideOperator" value="/";>&divide;</button>
+                
+                <button value="4" class="number">4</button>
+                <button value="5" class="number">5</button>
+                <button value="6" class="number">6</button>
+                <button class="sideOperator" value="*";>&times;</button>
+                
+                <button value="3" class="number">3</button>
+                <button value="2" class="number">2</button>
+                <button value="1" class="number">1</button>
+                <button class="sideOperator" value="-";>-</button>
+                
+                <button value="0" class="number">0</button>
 
-                <button data-all-clear class="span-two">AC</button>
-                <button data-delete>DEL</button>
-                <button data-operation>/</button>
-                <button data-operation>*</button>
-                <button data-operation>+</button>
-                <button data-operation>-</button>
-                <button data-number>1</button>
-                <button data-number>2</button>
-                <button data-number>3</button>
-                <button data-number>4</button>
-                <button data-number>5</button>
-                <button data-number>6</button>
-                <button data-number>7</button>
-                <button data-number>8</button>
-                <button data-number>9</button>
-                <button data-number>.</button>
-                <button data-number>0</button>
-                <button data-operation>=</button>
+                <button class="sideOperator" value="." style="background-color: rgb(229, 227, 227);">.</button>
+                <button id="equal" class="operator" style="background-color: rgb(0, 177, 222);">=</button>
+                <button class="sideOperator" value="+";>+</button>
 
+    
             </div>
 
         </div>
-        
+
     </main>
+
+    <script src="./calculator.js"></script>
 
 </body>
 </html>
