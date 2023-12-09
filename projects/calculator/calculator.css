@@ -22,6 +22,14 @@
 
 }
 
+/*
+
+----------------------------
+        CALCULATOR 
+----------------------------
+
+*/
+
 .calculator {
 
     display: flex;
@@ -55,6 +63,14 @@
     transition-duration: .3s;    
 
 }
+
+/*
+
+---------------------------
+    CALCULATOR DISPLAY 
+---------------------------
+
+*/
 
 .display {
 
@@ -92,6 +108,15 @@
     transition-duration: .3s;
     
 }
+
+
+/*
+
+---------------------------
+    CALCULATOR BUTTONS 
+---------------------------
+
+*/
 
 .buttons {
 
@@ -170,5 +195,54 @@
 .buttons > #delete:active {
 
     background-color: rgba(255, 0, 64, 0.303);
+
+}
+
+
+/*
+
+---------------------------
+      MOBILE SUPPORT 
+---------------------------
+
+*/
+
+@media only screen and (max-width: 768px) {
+
+    .calculator {
+
+        width: 80%;
+        height: 85%;
+
+    }
+}
+
+@media only screen and (max-height: 500px) {
+
+    .calculator {
+
+        width: 60%;
+        height: 85%;
+
+    }
+
+    .display {
+
+        margin-top: 0;
+        margin-bottom: 2em;
+
+    }
+
+    .display > #input {
+
+        font-size: 4em;
+
+    }
+
+    .buttons button {
+
+        font-size: 1.5em;
+
+    }
 
 }
