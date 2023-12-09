@@ -1,2 +1,2 @@
-# portfolio.github.io
+# Portfolio
  A portfolio of my projects
