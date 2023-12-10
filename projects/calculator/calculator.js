@@ -16,7 +16,7 @@ currentInputSize = Number(currentInputSize);
 window.onload = function () {
 
     input.value = "";
-    input.style.fontSize = `${currentInputSize}px`;
+    input.style.fontSize = "72px";
 
 };
 
@@ -67,12 +67,10 @@ buttonInput.forEach(function (button) {
 
         }
 
-        // Start From here
-        // date: 12/9/2023
-        if (currentInputSize === 36 && equalPressed == 0) {
+        if (currentInputSize <= 36 && equalPressed == 0) {
             
             input.value = input.value.substr(0, input.value.length - 1);
-            
+
         }
         
         if (equalPressed == 1) {
