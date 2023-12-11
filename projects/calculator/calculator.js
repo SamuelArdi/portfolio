@@ -47,11 +47,6 @@ buttonInput.forEach(function (button) {
         
         if (currentInputSize <= 36) {
 
-            let currentValueOnDisplay = input.value;
-
-            input.value = "";
-            input.value = currentValueOnDisplay;
-
             currentInputSize = 36;
 
             input.style.fontSize = "36px";
@@ -110,8 +105,6 @@ equal.addEventListener("click", function() {
 
         }
 
-        // Secret message
-        
     }
     catch (error) {
         
