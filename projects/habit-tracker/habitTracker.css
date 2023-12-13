@@ -2,4 +2,70 @@ body {
 
     font-family: Helvetica;
 
+    margin: 0;
+    padding: 0;
+
+}
+
+/*
+
+---------------------
+       Windows
+---------------------
+
+*/
+
+.topWindow {
+
+    position: relative;
+
+    width: 56em;
+    height: 2.5em;
+
+    left: 9.5em;
+
+    border: solid;
+
+
+}
+
+.leftWindow {
+
+    position: relative;
+
+    width: 9em;
+    height: 39em;
+
+    bottom: 2.9em;
+
+    border-style: solid;
+
+}
+
+.rightWindow {
+
+    border: solid;
+
+    position: relative;
+
+    width: 24.8em;
+    height: 39em;
+
+    bottom: 78.7em;
+    left: 66em;
+
+}
+
+.mainWindow {
+
+    position: relative;
+
+    border-style: solid;
+
+    width: 56em;
+    height: 35.9em ;
+
+    left: 9.5em;
+    bottom: 39.2em;
+
 }
