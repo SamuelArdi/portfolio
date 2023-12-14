@@ -8,97 +8,71 @@
     <link rel="stylesheet" href="./habitTracker.css">
 </head>
 <body>
-    
-    <main>
 
-        <div class="topWindow">
-            <p>All Habits</p>
-    
-            <button id="searchBtn">
-                <img src=""> <!-- Search icon -->
-                Search
-            </button>
-            
-            <button id="dateBtn">
-                <img src=""> <!-- Calendar icon -->
-                Date
-            </button>
-            
-            <button id="sortBtn">
-                <img src=""> <!-- Sort icon -->
-                Sort
-            </button>
-            
-            <button id="addHabitBtn">
-                <img src=""> <!-- Habit icon -->
-                Add Habit
-            </button>
-        </div>
+    <header>
+        <img src="./materials/images/background.jpg" id="backgroundImage">
+    </header>
 
-        <div class="leftWindow">
-            <!-- Some type of navigation bar -->
+    <div class="navigation">
 
-            <a href="#">
+        <button id="profileBtn">
+            <img src="">
+            Profile
+        </button>
 
-                <button id="profileBtn">
-                    <img src=""> <!-- Profile image -->
-                    Profile
-                </button>
+        <button id="allHabitsBtn">
+            <img src="./materials/images/left-window/to-do-list.png">
+            All Habits
+        </button>
 
-            </a>
-            <br>
-            <a href="#">
+        <br>
+        <!-- Preferences Section -->
+        <button id="manageHabitsBtn">
+            <img src="">
+            Manage Habits
+        </button>
 
-                <button id="allHabitsBtn">
-                    <img src=""> <!-- Icon -->
-                    All Habits
-                </button>
+        <button id="settings">
+            <img src="">
+            Settings
+        </button>
 
-            </a>
+        <button id="resources">
+            <img src="">
+            Resources
+        </button>
 
+    </div>
 
-            <p>Preferences</p>
-            <a href="#">
+    <div class="mainContent-interactions">
 
-                <button id="Manage Habits">
-                    <img src=""> <!-- Icon -->
-                    Manage Habits
-                </button>
+        <button id="searchBtn">
+            <img src="./materials/images/top-window/search.png">
+        </button>
 
-            </a>
-            <br>
-            <a href="#">
+        <button id="dateBtn">
+            <img src="./materials/images/top-window/calendar.png">
+        </button>
 
-                <button id="Settings">
-                    <img src=""> <!-- Icon -->
-                    Settings
-                </button>
+        <button id="sortBtn">
+            <img src="./materials/images/top-window/sort.png">
+        </button>
 
-            </a>
-            <br>
-            <a href="#">
+        <button id="addHabitBtn">
+            <img src="./materials/images/top-window/plus.png">
+        </button>
 
-                <button id="Resources">
-                    <img src=""> <!-- Icon -->
-                    Resources
-                </button>
+    </div>
 
-            </a>
-            
-        </div>
+    <div class="mainContent">
 
-        <div class="mainWindow">
-            <!-- Shows the main content -->
-            main window
-        </div>
+    </div>
 
-        <div class="rightWindow">
-            <!-- Details on currently selected habit -->
-            right window
-        </div>
-
-    </main>
+    <div class="habitDetails">
+        habit details
+    </div>
 
     <script src="./habitTracker.js"></script>
+    
 </body>
 </html>
