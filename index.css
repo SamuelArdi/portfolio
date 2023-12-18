@@ -80,11 +80,8 @@ span.menu-button:hover {
 
 .projectCoverImg:hover {
 
-    box-shadow: 
-    0 0 5px 1px rgb(175, 0, 175),
-    0 0 15px -1px rgba(175, 0, 175, .692),
-    0 0 20px -1px rgba(121, 2, 121, 0.342);
-
+    box-shadow: inset 0px 0px 25px 24px rgba(0, 0, 0, 0.31),0px 0px 25px 1px rgba(171, 67, 255, 0.68);
+    
 }
 
 .projectTitles {

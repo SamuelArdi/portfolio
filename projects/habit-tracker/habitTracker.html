@@ -6,6 +6,7 @@
     <title>Habit Tracker</title>
 
     <link rel="stylesheet" href="./habitTracker.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 <body>
 
@@ -15,12 +16,14 @@
 
     <div class="navigation">
 
+        <h1>Habit Tracker</h1>
+
         <button id="profileBtn">
-            <img src="">
+            <img src="./materials/images/left-window/pfp.jpeg">
             Profile
         </button>
 
-        <button id="allHabitsBtn">
+        <button id="habitsBtn">
             <img src="./materials/images/left-window/to-do-list.png">
             All Habits
         </button>
@@ -28,48 +31,58 @@
         <br>
         <!-- Preferences Section -->
         <button id="manageHabitsBtn">
-            <img src="">
+            <img src="./materials/images/left-window/manage-habits.png  ">
             Manage Habits
         </button>
 
         <button id="settings">
-            <img src="">
+            <img src="./materials/images/left-window/setting.png">
             Settings
         </button>
 
         <button id="resources">
-            <img src="">
+            <img src="./materials/images/left-window/share.png">
             Resources
         </button>
 
     </div>
-
-    <div class="mainContent-interactions">
+    
+    <div class="mainContent-navbar">
 
         <button id="searchBtn">
+            <input type="text" id="searchArea">
             <img src="./materials/images/top-window/search.png">
         </button>
 
         <button id="dateBtn">
             <img src="./materials/images/top-window/calendar.png">
+            Today
         </button>
 
         <button id="sortBtn">
             <img src="./materials/images/top-window/sort.png">
+            Alphabetically
         </button>
 
         <button id="addHabitBtn">
             <img src="./materials/images/top-window/plus.png">
+            Add Habit
         </button>
 
     </div>
 
     <div class="mainContent">
+        <div id="habit1">
+            <h3 id="habitName">Habit Name</h3>
 
+            <p id="habitStatus">Status</p>
+
+            <span class="material-symbols-outlined" id="moreBtn">more_vert</span>
+        </div>
     </div>
 
     <div class="habitDetails">
-        habit details
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae maxime et eveniet quaerat deleniti commodi eaque quasi. Ratione consequuntur voluptates aliquam vel enim accusamus atque, recusandae ipsam ullam dicta eum.</p>
     </div>
 
     <script src="./habitTracker.js"></script>

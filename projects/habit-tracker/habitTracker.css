@@ -1,13 +1,21 @@
+@font-face {
+	font-family: Roboto;
+	src: url("./materials/fonts/Roboto/Roboto-Regular.ttf");
+}
+
 body {
-	font-family: Helvetica;
+	font-family: Roboto;
 }
 
 #backgroundImage {
 	position: absolute;
+
 	right: 0;
 	bottom: 0;
+
 	min-width: 100%;
 	min-width: 100%;
+
 	object-fit: cover;
 	z-index: -1;
 }
@@ -24,31 +32,41 @@ body {
 .navigation {
 	overflow: hidden;
 	position: fixed;
+
 	display: flex;
 	flex-direction: column;
-	width: 9em;
-	height: 91%;
-	border: solid;
-	gap: 1em;
-	padding-top: 50px;
-	padding-inline: 10px;
-	border-radius: 1em;
+
+	width: 10%;
+	height: 93.9%;
+
 	border: none;
+	border-radius: 1em;
+
+	gap: 1em;
+	padding-top: 27px;
+	padding-inline: 10px;
+
+
 	background-color: rgb(238, 255, 253);
 	z-index: inherit;
 }
 
-.mainContent-interactions {
+.mainContent-navbar {
 	overflow: hidden;
 	position: fixed;
-	border: solid;
-	width: 59%;
-	height: 5%;
-	margin-left: 11em;
-	border-radius: .6em;
+
 	border: none;
+	border-radius: .6em;
+	
+	width: 56%;
+	height: 5%;
+
+	margin-left: 12.5%;
 	padding-top: 10px;
 	padding-inline: 10px;
+
+	text-align: right;
+
 	background-color: rgb(238, 255, 253);
 	z-index: inherit;
 }
@@ -56,15 +74,19 @@ body {
 .mainContent {
 	overflow: auto;
 	position: fixed;
-	border: solid;
-	width: 59%;
-	height: 89%;
-	margin-top: 3.4em;
-	margin-left: 11em;
-	border-radius: 1em;
+
 	border: none;
+	border-radius: 1em;
+	
+	width: 56%;
+	height: 89%;
+
+	margin-top: 3%;
+	margin-left: 12.5%;
+	
 	padding-top: 10px;
 	padding-inline: 10px;
+
 	background-color: rgb(238, 255, 253);
 	z-index: inherit;
 }
@@ -84,14 +106,18 @@ body {
 
 .habitDetails {
 	position: fixed;
-	border: solid;
-	margin-left: 74.4em;
+
+	border: none;
+	border-radius: 1em;
+
+	margin-left: 70.8%;
+
 	height: 96.3%;
 	width: 26.2%;
-	border-radius: 1em;
-	border: none;
+
 	padding-top: 10px;
 	padding-inline: 10px;
+
 	background-color: rgb(238, 255, 253);
 	z-index: inherit;
 }
@@ -105,25 +131,126 @@ body {
 
 */
 
+/* NAVIGATION */
+
 .navigation button {
+	display: flex;
+	flex-direction: row;
+
 	width: 100%;
-	height: 5%;
+	height: 6%;
 
 	border: none;
-	border-radius: 5px;
+	border-radius: .3em;
 
 	cursor: pointer;
+
+	padding-top: 7px;
+
 	font-weight: bolder;
 	font-size: 1.1em;
-    
-	background-color: aliceblue;
-	transition: all 0.15s cubic-bezier(0.58, 0, 0.81, 0.89);
+}
+
+.navigation h1 {
+	text-align: center;
+	font-size: 1.7em;
+
+	margin-top: 0px;
+}
+
+.navigation > #profileBtn img {
+	clip-path: circle(50% at 50% 50%);
+}
+
+.navigation img {
+	width: 24px;
+	height: 24px;
+	margin-right: 7px;
 }
 
 .navigation button:hover {
-	background-color: rgb(228, 228, 228);
+	background-color: rgb(164, 164, 164);
+
 }
 
-.navigation button:active {
-	background-color: rgb(162, 232, 255);
+.navigation button:focus {
+	background-color: rgb(164, 164, 164);
+}
+
+/* MAIN CONTENT NAVBAR */
+
+.mainContent-navbar button {
+	overflow: hidden;
+
+	font-size: x-large;
+	text-align: center;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: .3em;
+
+	width: fit-content;
+	height: fit-content;
+}
+
+.mainContent-navbar button:hover {
+	background-color: rgb(164, 164, 164);
+}
+
+.mainContent-navbar img {
+	width: 24px;
+	height: 24px;
+
+	margin-right: 7px;
+
+	vertical-align: top;
+}
+
+.mainContent-navbar > #searchBtn {
+	margin-right: 3em;
+
+	border-radius: 10em;
+}
+
+.mainContent-navbar p {
+	text-align: left;
+}
+
+.mainContent-navbar > #searchBtn > #searchArea {
+	width: 20em;
+	height: 1.4em;
+
+	vertical-align: calc(50% - 4px);
+
+	border: none;
+	border-radius: .7em;
+}
+
+.mainContent-navbar > #searchBtn > #searchArea:focus {
+	outline: none;
+}
+
+/* MAIN CONTENT */
+
+.mainContent div {
+	display: flex;
+	flex-direction: row;
+
+	border: solid;
+	border-radius: .7em;
+
+	padding-left: 1.5%;
+}
+
+.mainContent div > #habitStatus {
+	margin-left: 80%;
+	margin-top: 1.8%;
+
+	font-size: larger;
+	
+}
+
+.mainContent div > #moreBtn {
+	margin-top: 2%;
 }
