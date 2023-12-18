@@ -18,8 +18,6 @@
     object-fit: cover;
     z-index: -1;
 
-    transition-duration: .4s;
-
 }
 
 /*
@@ -60,8 +58,6 @@
 
     background-color: rgb(229, 227, 227);
 
-    transition-duration: .3s;    
-
 }
 
 /*
@@ -90,7 +86,6 @@
 
     display: flex;
 
-    transition-duration: .3s;
 }
 
 .display > #input {
@@ -104,8 +99,6 @@
     width: 100%;
     height: 100%;
 
-    transition-duration: .4s;
-    
 }
 
 
@@ -126,8 +119,6 @@
     width: 100%;
     height: 100%;
 
-    transition-duration: .3s;
-
 }
 
 .buttons button {
@@ -145,15 +136,8 @@
 
     cursor: pointer;
 
-    transition-duration: .2s;
-
 }
 
-.buttons .number {
-
-    transition-duration: .2s;
-    
-}
 
 .buttons .number:active {
 
