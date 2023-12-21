@@ -6,86 +6,61 @@
     <title>Habit Tracker</title>
 
     <link rel="stylesheet" href="./habitTracker.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 <body>
 
-    <header>
-        <img src="./materials/images/background.jpg" id="backgroundImage">
-    </header>
+    <div class="habitTracker_container">
 
-    <div class="navigation">
+        <div class="habitTracker_navBar">
+            <h2>Habit Tracker</h2>
 
-        <h1>Habit Tracker</h1>
+            <a href="#">
+                <img src="./materials/images/navBar/pfp.jpeg" id="pfp">
+                Profile
+            </a>
 
-        <button id="profileBtn">
-            <img src="./materials/images/left-window/pfp.jpeg">
-            Profile
-        </button>
+            <a href="#">
+                <img src="./materials/images/navBar/to-do-list.png">    
+                All Habits
+            </a>
+            
+            <p>Preferences</p>
+            <a href="#">
+                <img src="./materials/images/navBar/manage-habits.png">
+                Manage Habits
+            </a>
 
-        <button id="habitsBtn">
-            <img src="./materials/images/left-window/to-do-list.png">
-            All Habits
-        </button>
+            <a href="#">
+                <img src="./materials/images/navBar/setting.png">
+                Settings
+            </a>
 
-        <br>
-        <!-- Preferences Section -->
-        <button id="manageHabitsBtn">
-            <img src="./materials/images/left-window/manage-habits.png  ">
-            Manage Habits
-        </button>
+            <a href="#">
+                <img src="./materials/images/navBar/share.png">
+                Resources
+            </a>
 
-        <button id="settings">
-            <img src="./materials/images/left-window/setting.png">
-            Settings
-        </button>
-
-        <button id="resources">
-            <img src="./materials/images/left-window/share.png">
-            Resources
-        </button>
-
-    </div>
-    
-    <div class="mainContent-navbar">
-
-        <button id="searchBtn">
-            <input type="text" id="searchArea">
-            <img src="./materials/images/top-window/search.png">
-        </button>
-
-        <button id="dateBtn">
-            <img src="./materials/images/top-window/calendar.png">
-            Today
-        </button>
-
-        <button id="sortBtn">
-            <img src="./materials/images/top-window/sort.png">
-            Alphabetically
-        </button>
-
-        <button id="addHabitBtn">
-            <img src="./materials/images/top-window/plus.png">
-            Add Habit
-        </button>
-
-    </div>
-
-    <div class="mainContent">
-        <div id="habit1">
-            <h3>Your First Habit!</h3>
-
-            <p id="habitStatus">Status</p>
-
-            <span class="material-symbols-outlined" id="moreBtn">more_vert</span>
+            <a href="#" id="source">
+                Source Code
+            </a>
         </div>
-    </div>
 
-    <div class="habitDetails">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae maxime et eveniet quaerat deleniti commodi eaque quasi. Ratione consequuntur voluptates aliquam vel enim accusamus atque, recusandae ipsam ullam dicta eum.</p>
-    </div>
+        <div class="habitTracker_mainNavBar">
+            <h3>All Habits</h3>
 
-    <script src="./habitTracker.js"></script>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="habitTracker_main">
+
+        </div>
+
+        <div class="habitTracker_details">
+
+        </div>
+
+    </div>
     
+    <script src="./habitTracker.js"></script>
 </body>
 </html>
