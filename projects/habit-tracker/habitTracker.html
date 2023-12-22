@@ -6,6 +6,7 @@
     <title>Habit Tracker</title>
 
     <link rel="stylesheet" href="./habitTracker.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 </head>
 <body>
 
@@ -46,17 +47,70 @@
         </div>
 
         <div class="habitTracker_mainNavBar">
-            <h3>All Habits</h3>
+            <h2>All Habits</h2>
 
-            <input type="text" placeholder="Search">
+            <input type="text" placeholder="Search" id="searchArea">
+            <button id="search">
+                <img src="./materials/images/mainNavBar/search.png">
+            </button>
+
+            <button id="date" class="freqButtons">
+                <img src="./materials/images/mainNavBar/calendar.png">
+                Today
+            </button>
+
+            <button id="sort" class="freqButtons">
+                <img src="./materials/images/mainNavBar/sort.png">
+                Alphabetically
+            </button>
+
+            <button id="addHabit" class="freqButtons">
+                <img src="./materials/images/mainNavBar/plus.png">
+                Add Habit
+            </button>
         </div>
 
         <div class="habitTracker_main">
+            <div id="habit-1">
+                <p class="habitName">MR BEAST !!!</p>
 
+                <p class="habitDetail">0/2 hrs</p>
+
+                <p class="status">Completed</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
+
+            <div id="habit-2">
+                <p class="habitName">Wangan Midnight</p>
+
+                <p class="habitDetail">0/4 hrs</p>
+
+                <p class="status">In Progress</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
+
+            <div id="habit-3">
+                <p class="habitName">Add Project To Portfolio</p>
+
+                <p class="habitDetail"></p>
+
+                <p class="status">In Progress</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
         </div>
 
         <div class="habitTracker_details">
+            <div class="details_Top">
+                <h2 id="detailName">MR BEAST !!!</h2>
 
+                <img src="./materials/images/habitDetails/streak.png">
+                <p id="streak">0</p>
+            </div>
+
+            <div class="details_Bottom">
+                <button id="inProgress">In Progress</button>
+                <button id="completeHabit">Complete Habit</button>
+            </div>
         </div>
 
     </div>
