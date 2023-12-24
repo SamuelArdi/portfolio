@@ -13,7 +13,7 @@ body {
 }
 
 :root {
-	--bgColor: rgb(234, 234, 234);
+	--bgColor: white;
 	--hoverColor: rgb(211, 211, 211);
 }
 
@@ -82,7 +82,7 @@ body {
 
 .habitTracker_navBar a:hover {
 	background-color: var(--hoverColor);
-	color: #b80110;
+	color: rgb(255, 0, 64);
 }
 
 .habitTracker_navBar > #source {
@@ -177,7 +177,7 @@ body {
 
 .habitTracker_mainNavBar button:hover {
 	background-color: var(--hoverColor);
-	color:#b80110;
+	color: rgb(255, 0, 64);
 }
 
 .freqButtons {
@@ -201,6 +201,8 @@ body {
 .habitTracker_main {
 	position: absolute;
 
+	overflow: scroll;
+
 	top: 14%;
 	left: 17%;
 
@@ -212,6 +214,10 @@ body {
 	height: 84%;
 
 	color: black;
+}
+
+.habitTracker_main::-webkit-scrollbar {
+	display: none;
 }
 
 .habitTracker_main div {
@@ -237,10 +243,6 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
-.habitTracker_main > div:focus {
-	background-color: blue;
-}
-
 .habitName {
 	font-size: 1.2em;
 	font-weight: 600;
@@ -250,7 +252,7 @@ body {
 	margin: auto;
 }
 
-.status {
+.habitStatus {
 	margin-right: 18px;
 }
 
@@ -305,22 +307,120 @@ body {
 	margin-right: 10px;
 }
 
-.habitTracker_details .details_Bottom {
+
+.habitTracker_details .details_Middle_Labels {
 	display: flex;
 	flex-direction: row;
 
-	margin-top: 135%;
-	margin-left: 19%;
+	padding: 0;
 
-	gap: 30px;
+	transform: translate(10%, 0%);
+
+	width:max-content;
+	height: fit-content;
+
+	margin-left: 43%;
+	gap: 22%;
+}
+
+.habitTracker_details .details_Middle {
+	transform: translateY(-8%);
+	
+	align-items: center;
+	gap: 50px
+}
+
+.habitTracker_details .details_Middle div {
+	display: flex;
+	flex-direction: row;
+}
+
+.habitTracker_details .details_Middle .dayStreak_Stats {
+	transform: translateX(100%);
+}
+
+.habitTracker_details .details_Middle .weekStreak_Stats {
+	transform: translateX(51%);
+}
+
+.habitTracker_details .details_Middle .monthStreak_Stats {
+	transform: translateX(21%);
+}
+
+.habitTracker_details .details_Middle h3 {
+	border: solid;
+	border-radius: .3em;
+	border-width: 3px;
+
+	margin-right: 6%;
+	margin-left: 10%;
+
+	width: 30px;
+	padding-top: 2px;
+
+	text-align: center;
+}
+
+.habitTracker_details .editConfirmation {
+	display: none;
+	transform: translate(-13%, 250%);
+}
+
+.habitTracker_details .editConfirmation button {
+	margin-left: 27%;
+
+	font-size: larger;
+
+	background-color: inherit;
+
+	border: none;
+
+	cursor: pointer;
+}
+
+.habitTracker_details .editConfirmation > #cancelEdit {
+	border: solid;
+	border-width: 2px;
+
+	color: rgb(255, 0, 0);
+}
+
+.habitTracker_details .editConfirmation > #cancelEdit:hover {
+	color: rgb(255, 0, 0);
+	background-color: var(--hoverColor);
+}
+
+.habitTracker_details .editConfirmation > #confirmEdit {
+	border: solid;
+	border-width: 2px;
+
+	color: green;
+}
+
+.habitTracker_details .editConfirmation > #confirmEdit:hover {
+	background-color: var(--hoverColor);
+	color: rgb(0, 132, 0);
+}
+
+.habitTracker_details .details_Bottom {
+	display: flexbox;
+
+	margin-top: 45%;
+	margin-right: 2%;
+
+	text-align: end;
 }
 
 .habitTracker_details .details_Bottom button {
-	padding: 5px;
 	font-size: larger;
 
 	border: none;
 	border-radius: .2em;
+
+	padding: 5px;
+
+	margin-bottom: 20px;
+	margin-left: 15px;
 
 	background-color: inherit;
 
@@ -329,5 +429,41 @@ body {
 
 .habitTracker_details .details_Bottom button:hover {
 	background-color: var(--hoverColor);
-	color: #b80110;
+	color: rgb(255, 0, 64);
+}
+
+.habitTracker_details .details_Bottom > #completeHabit {
+	border: solid;
+	border-width: 2px;
+
+	color: green;
+}
+
+.habitTracker_details .details_Bottom > #completeHabit:hover {
+	color: rgb(0, 132, 0)
+}
+
+.habitTracker_details .details_Bottom > #editDetails {
+	border: solid;
+	border-width: 2px;
+
+	color: rgb(210, 137, 0);
+}
+
+.habitTracker_details .details_Bottom > #editDetails:hover {
+	color: rgb(219, 142, 0);
+}
+
+.habitTracker_details .details_Bottom > #deleteHabit {
+	font-size: larger;
+	font-weight: bold;
+
+	border: solid;
+	border-width: 2px;
+
+	color: rgb(236, 0, 0);
+}
+
+.habitTracker_details .details_Bottom > #deleteHabit:hover {
+	color: rgb(255, 0, 0)
 }

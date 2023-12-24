@@ -70,13 +70,41 @@
             </button>
         </div>
 
-        <div class="habitTracker_main"></div>
+        <div class="habitTracker_main">
+
+            <div id="habit-1">
+                <p class="habitName">MR BEAST !!!</p>
+
+                <p class="habitDetail">0/2 hrs</p>
+
+                <p class="status">Completed</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
+
+            <div id="habit-2">
+                <p class="habitName">Wangan Midnight</p>
+
+                <p class="habitDetail">0/4 hrs</p>
+
+                <p class="status">In Progress</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
+
+            <div id="habit-3">
+                <p class="habitName">Add Project To Portfolio</p>
+
+                <p class="habitDetail"></p>
+
+                <p class="status">In Progress</p>
+                <span class="material-symbols-outlined moreVert">more_vert</span>
+            </div>
+
+        </div>
 
         <div class="habitTracker_details">
 
             <div class="details_Top">
-                <h2 id="detailName">Habit Name</h2>
-
+                <h2 id="detailName">MR BEAST !!!</h2>
 
                 <img src="./materials/images/habitDetails/streak.png">
                 <p id="streak">0</p>
@@ -90,34 +118,28 @@
             <div class="details_Middle">
                 <div class="dayStreakContainer">
                     <h2 id="dayStreak">Day Streak</h2>
-                    <h3 id="dayStreak_current" class="dayStreak_Stats">0</h3>
-                    <h3 id="dayStreak_longest" class="dayStreak_Stats">0</h3>
+                    <h3 id="dayStreak_current" class="dayStreak_Stats">10</h3>
+                    <h3 id="dayStreak_longest" class="dayStreak_Stats">24</h3>
                 </div>
 
                 <div class="weekStreakContainer">
                     <h2 id="weekStreak">Week Streak</h2>
-                    <h3 id="weekStreak_current" class="weekStreak_Stats">0</h3>
-                    <h3 id="weekStreak_longest" class="weekStreak_Stats">0</h3>
+                    <h3 id="weekStreak_current" class="weekStreak_Stats">3</h3>
+                    <h3 id="weekStreak_longest" class="weekStreak_Stats">5</h3>
                 </div>
                 
                 <div class="monthStreakContainer">
                     <h2 id="monthStreak">Month Streak</h2>
-                    <h3 id="monthStreak_current" class="monthStreak_Stats">0</h3>
-                    <h3 id="monthStreak_longest" class="monthStreak_Stats">0</h3>
+                    <h3 id="monthStreak_current" class="monthStreak_Stats">2</h3>
+                    <h3 id="monthStreak_longest" class="monthStreak_Stats">3</h3>
                 </div>
             </div>
 
-            <div class="editConfirmation">
-                <button id="cancelEdit">Cancel</button>
-                <button id="confirmEdit">Confirm</button>
+            <div class="details_Bottom">
+                <button id="inProgress">In Progress</button>
+                <button id="completeHabit">Complete Habit</button>
             </div>
 
-            <div class="details_Bottom">
-                <button id="editDetails">Edit Habit</button>
-                <button id="completeHabit">Complete Habit</button>
-                <button id="deleteHabit">Delete Habit</button>
-            </div>
-            
         </div>
 
     </div>
