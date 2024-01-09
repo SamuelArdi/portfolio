@@ -1,12 +1,19 @@
 var newHabitBtn = document.getElementById("addHabit");
-var habits = document.querySelectorAll("div[class='habitTracker_main']")
-
-
 var editHabitBtn = document.getElementById("editDetails");
+var deleteHabitBtn = document.getElementById("deleteHabit")
+
+var habits = document.querySelectorAll("div[class='habitTracker_main']");
 
 var habitList = []
 
+var currentlySelectedHabit; // Index of the currently selected habit in the list
+
+// Don't know what to do with these on load and closed functions yet,
+// I'll probably use it later for saving and loading habits using cookies.
 window.onload = function() {
+}
+
+window.closed = function() {
 }
 
 function retrieveHn() {
@@ -18,14 +25,19 @@ function retrieveHn() {
         return habitNumber;
     }
     catch (err) {
-        console.error("false error");
+        console.error("No Habit Selected.");
     }
 }
 
 var counter = 0;
+function hn(){
+    let hn = "hn" + counter;
+    return hn
+}
+
 function addHabit() {
-    let id = "hn" + counter;
-    counter += 1;
+    let id = hn();
+    counter += 1
     
     let getClass = document.querySelector("div[class=habitTracker_main]");
 
@@ -70,6 +82,60 @@ function addHabit() {
     })
 }
 
+function removeHabit() {
+    // to-do:
+    // [X] remove the habit from the list
+    // [] remove the habit from the details tab
+    // [] remove the habit from the main page
+
+    habitList.splice(currentlySelectedHabit, 1);
+
+    // Removing the value/item from the habitList
+        // retrieve the index numbers from the list of habitlist
+        // separate the number from the hn
+        // convert the number into an integer
+        // var num;
+        // replace the num variables with the index numbers from the habitList 
+
+    let allHn = [];
+    let newHnValue = [];
+
+    // Retrieves index numbers
+    // Separates the numbers
+    // Replaces the keys
+    for (let i = 0; i < habitList.length; i++) {
+        let hn = habitList[i];
+        let hnNum = Object.keys(hn)[0];
+
+        // These lines of code retrieve the index numbers
+        let index = habitList.map(obj => Object.keys(obj)[0]).indexOf(hnNum);
+        allHn.push(index);
+        //
+        
+        // These lines of code separates the hn from the numbers
+        // And adds them to the list
+        let separated = hnNum.slice(0, 2);
+        newHnValue.push(separated + allHn[i]);    
+        //
+
+        // Replaces the keys with the new and updated keys
+        habitList[i] = {[newHnValue[i]]: habitList[i][hnNum]}
+        //
+    }
+
+    // Removes the selected habit from the details tab
+        // This will be added later when all of the other features of deletion is implemented
+    //
+
+    // Removes the selected habit from the main page
+        
+        // retrieve the class id from the selected habit
+        // remove the selected habit from the main page
+        // remove all of it's children and remove the div from the main page if the step above doesn't work
+
+     
+}
+
 function addToDetailTab(hn, hnNum) {
     // Add habit information to the details tab
 
@@ -97,19 +163,30 @@ function addToDetailTab(hn, hnNum) {
     monthStreak_current.innerHTML = habitList[hnNum][hn].monthStreak[0];
     monthStreak_longest.innerHTML = habitList[hnNum][hn].monthStreak[1];
 
+    currentlySelectedHabit = hnNum;
 }
 
+// Adds a new habit
 newHabitBtn.onclick = addHabit;
 
+// Shows habit details
 habits.forEach(div => {
     div.addEventListener("click", function() {
-        let hn = retrieveHn();
-        let hnNum = hn.split("n")[1];
-
-        addToDetailTab(hn, hnNum)
+        try {
+            let hn = retrieveHn();
+            let hnNum = hn.split("n")[1];
+    
+            addToDetailTab(hn, hnNum)
+        } catch (err) {
+            return;
+        }
     })
 })
 
+// Edit habit details
 editHabitBtn.addEventListener("click", function() {
-
+    console.log(habitList)
 })
+
+// Delete habit
+deleteHabitBtn.onclick = removeHabit;
