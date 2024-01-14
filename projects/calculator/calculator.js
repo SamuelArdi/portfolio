@@ -40,9 +40,6 @@ buttonInput.forEach(function (button) {
             currentInputSize -= 6;
             
             input.style.fontSize = `${currentInputSize}px`;
-            
-            console.log("decreased: " + currentInputSize);
-            
         }
         
         if (currentInputSize <= 36) {
