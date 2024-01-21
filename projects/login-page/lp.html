@@ -13,7 +13,9 @@
 <body>
 
     <header>
-        <!-- Put the source of the moving background here -->
+
+        <div class="backgroundGradient"></div>
+
     </header>
 
     <main>
@@ -25,14 +27,30 @@
             <form action="#" method="get">
 
                 <label for="emailInput">Email</label>
-                <input type="text" id="emailInput" placeholder="Enter Email" required>
-    
+                <input type="text" id="emailInput" required>
+
                 <label for="passwordInput">Password</label>
-                <input type="text" id="passwordInput" placeholder="Enter Password" required><br>
+                <input type="text" id="passwordInput" required><br>
                 
                 <input type="submit" value="Sign in" id="signInBtn">
 
             </form>
+
+            <img src="./images/down-arrow.png" id="signUpArrow" alt="signUp">
+            <span id="signUpArrowHitbox"></span> <!-- A hitbox for the sign up arrow -->
+
+            <div class="registerElements">
+
+                <p id="signUpTitle">Sign Up Now </p>
+
+                <p id="registerBtn">Register</p>
+
+                <button id="signUpBtn">Sign Up</button>
+
+            </div>
+
+            <img src="./images/down-arrow.png" id="recoverAccArrow" alt="forgotAcc">
+            <span id="recoverAccArrowHitbox"></span>
 
         </div>
 
