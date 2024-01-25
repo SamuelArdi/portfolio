@@ -1,0 +1,107 @@
+const container = document.getElementById("Container");
+
+const signInBtn = document.getElementById("signInBtn");
+
+const signUpHitbox = document.getElementById("signUpArrowHitbox");
+const recoverAccHitbox = document.getElementById("recoverAccArrowHitbox");
+
+const signUpBtn = document.getElementById("signUpBtn");
+const recoverAccBtn = document.getElementById("recoverAccBtn");
+
+const signUpElements = document.querySelector("div[class=signUpElements]");
+
+const stylesheet = document.styleSheets[0];
+
+let isFullActivation = false;
+
+async function sideBoxesElements(side, activate) {
+
+    if (side === "right" && activate === false) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                for (let i = 0; i < signUpElements.children.length; i++) {
+                    signUpElements.children[i].style.visibility = "hidden";
+                }
+                resolve();
+            }, 10);
+        })
+    }
+    else if (side === "right" && activate === true) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                for (let i = 0; i < signUpElements.children.length; i++) {
+                    signUpElements.children[i].style.visibility = "visible";
+                }
+                isFullActivation = true;
+                resolve();
+            }, 500);
+        })
+    }
+
+    // CHANGE OUT THE SIGN UP ELEMENTS VARIABLE WITH THE
+    // ONES FROM THE RECOVER ACC ELEMENTS VARIABLE !!!!
+
+    if (side === "left" && activate === false) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                for (let i = 0; i < signUpElements.children.length; i++) {
+                    signUpElements.children[i].style.visibility = "hidden";
+                }
+                resolve();
+            }, 1000);
+        })
+    }
+    else if (side === "left" && activate === true) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                for (let i = 0; i < signUpElements.children.length; i++) {
+                    signUpElements.children[i].style.visibility = "visible";
+                }
+                resolve();
+            }, 1000);
+        })
+
+    }
+
+}
+
+async function sideBoxes(side, activate) {
+
+    if (side === "right" && activate === true) {
+        stylesheet.insertRule(".Container::after { transform: scalex(.47); }", stylesheet.cssRules.length);
+        await sideBoxesElements("right", true)
+    }
+    else if (side === "right" && activate === false) {
+        stylesheet.insertRule(".Container::after { transform: scalex(0); }", stylesheet.cssRules.length);
+        await sideBoxesElements("right", false)
+        isFullActivation = false;
+    }
+
+}
+
+function checkActivation(fullActivation) {
+
+    if (fullActivation === true) {
+        return;
+    }
+    
+    if (fullActivation === false) {
+        sideBoxes("right", true);
+    }
+
+}
+
+// Sign up hitbox
+signUpHitbox.onmouseover = () => {
+    checkActivation(isFullActivation);
+}
+signUpHitbox.onmouseout = () => {
+    sideBoxes("right", false);
+}
+// Sign up elements
+signUpElements.onmouseover = () => {
+    checkActivation(isFullActivation);
+}
+signUpElements.onmouseout = () => {
+    sideBoxes("right", false);
+}

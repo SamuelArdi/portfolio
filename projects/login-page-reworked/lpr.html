@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign up</title>
+
+    <link rel="stylesheet" href="./lpr.css">
+    <script src="./lpr.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        <div id="backgroundGradient"></div>
+    </header>
+
+    <main>
+
+        <div class="signInContainer">
+
+            <p id="signInTitle">Sign in</p>
+
+            <form action="#" method="get">
+            
+                <label for="emailInput">Email</label>
+                <input type="text" id="emailInput">
+
+                <label for="passwordInput">Password</label>
+                <input type="text" id="passwordInput">
+
+                <input type="submit" value="Sign in" id="signInBtn">
+
+            </form>
+
+            <img src="./images/down-arrow.png" id="signUpArrow" alt="signUp">
+            <div id="signUpArrowHitbox"></div>
+
+            <div class="signUpElements">
+
+                <p>Don't have an account?</p>
+                <p>You can get many benefits by signing up</p>
+                <br>
+                <button id="signUpBtn">Sign up now</button>
+                
+            </div>
+
+            <img src="./images/down-arrow.png" id="recoverAccArrow" alt="recoverAcc">
+            <div id="recoverAccArrowHitbox"></div>
+
+            <div class="recoverAccElements">
+                <p>Forgot or lost your account?</p>
+                <p>Our account recovery process are one of the best in the world</p>
+                <button id="recoverAccBtn">Recover account</button>
+            </div>
+
+        </div>
+
+        <div class="signUpContainer" style="visibility: hidden;"></div> <!-- These two will be worked on later -->
+
+        <div class="recoverAccContainer" style="visibility: hidden;"></div> <!-- These two will be worked on later -->
+
+    </main>
+    
+</body>
+</html>
