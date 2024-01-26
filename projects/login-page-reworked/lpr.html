@@ -8,7 +8,7 @@
     <title>Sign up</title>
 
     <link rel="stylesheet" href="./lpr.css">
-    <script src="./lpr.js" defer></script>
+    <script src="./lpr.js" async></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,12 @@
 
     <main>
 
+        <!-- 
+        ------------------------------
+              Sign in container 
+        ------------------------------
+        -->
+
         <div class="signInContainer">
 
             <p id="signInTitle">Sign in</p>
@@ -35,7 +41,7 @@
                 <label for="passwordInput">Password</label>
                 <input type="text" id="passwordInput">
 
-                <input type="submit" value="Sign in" id="signInBtn">
+                <input type="submit" value="Sign in" id="signInFormBtn">
 
             </form>
 
@@ -53,18 +59,68 @@
 
             <img src="./images/down-arrow.png" id="recoverAccArrow" alt="recoverAcc">
             <div id="recoverAccArrowHitbox"></div>
-
+            
             <div class="recoverAccElements">
+
                 <p>Forgot or lost your account?</p>
                 <p>Our account recovery process are one of the best in the world</p>
                 <button id="recoverAccBtn">Recover account</button>
+
             </div>
 
         </div>
+        
+        <!-- 
+        ------------------------------
+              Sign up container 
+        ------------------------------
+        -->
 
-        <div class="signUpContainer" style="visibility: hidden;"></div> <!-- These two will be worked on later -->
+        <div class="signUpContainer" style="visibility: hidden;">
 
-        <div class="recoverAccContainer" style="visibility: hidden;"></div> <!-- These two will be worked on later -->
+            <p id="signUpTitle">Sign up</p>
+
+            <form action="#" method="get">
+            
+                <label for="emailInput">Email</label>
+                <input type="text" id="emailInput">
+
+                <label for="passwordInput">Password</label>
+                <input type="text" id="passwordInput">
+
+                <input type="submit" value="Sign up" id="signUpFormBtn">
+
+            </form>
+
+            <img src="./images/down-arrow.png" id="signInArrow" alt="signUp">
+            <div id="signInArrowHitbox"></div>
+
+            <div class="signInElements">
+                <p>Already have an account?</p>
+                <p>If so you you have access to many benefits</p>
+                <button id="signInBtn">Sign in now</button>
+            </div>
+
+        </div> 
+        
+        <!-- 
+        ------------------------------
+          Recover Account container 
+        ------------------------------
+        -->
+
+        <div class="recoverAccContainer" style="visibility: hidden;">
+            <p>account recovery</p>
+        </div> <!-- These two will be worked on later -->
+        
+        <div class="covers" style="z-index: -1;">
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+            <div class="cover" style="visibility: hidden; transform: scaleX(1) scaleY(0);"></div>
+        </div>
 
     </main>
     
