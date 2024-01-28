@@ -35,13 +35,27 @@
 @keyframes movingArrow {
 
     0% {
-        translate: 1px;
+        translate: 2px;
     }
     50% {
-        translate: 5px;
+        translate: -2px;
     }
     100% {
-        translate: 1px;
+        translate: 2px;
+    }
+
+}
+
+@keyframes movingArrow2 {
+
+    0% {
+        translate: -2px;
+    }
+    50% {
+        translate: 2px;
+    }
+    100% {
+        translate: -2px;
     }
 
 }
@@ -80,6 +94,8 @@ header div {
 }
 
 main {
+
+    font-family: "Roboto", sans-serif;
 
     width: 40%;
     height: 50%;
@@ -126,7 +142,7 @@ main {
 -----------------------
 */
 
-.signInContainer, .signUpContainer {
+.signInContainer, .signUpContainer, .recoverAccContainer {
 
     position: absolute;
     overflow: hidden;
@@ -145,7 +161,7 @@ main {
 
 }
 
-.signInContainer > #signInTitle, .signUpContainer > #signUpTitle {
+.signInContainer > #signInTitle, .signUpContainer > #signUpTitle, .recoverAccContainer > #recoverAccTitle {
 
     font-size: 160%;
     font-weight: bold;
@@ -174,11 +190,11 @@ main {
 
 }
 
-.signInContainer form label, .signUpContainer form label {
+.signInContainer form label, .signUpContainer form label, .recoverAccContainer form label {
     font-size: 1.1em;
 }
 
-.signInContainer form input, .signUpContainer form input {
+.signInContainer form input, .signUpContainer form input, .recoverAccContainer form input {
 
     width: 100%;
     padding: 5px;
@@ -199,7 +215,7 @@ main {
 
 }
 
-.signInContainer form input:focus, .signUpContainer form input:focus {
+.signInContainer form input:focus, .signUpContainer form input:focus, .recoverAccContainer form input:focus {
     outline: none;
     border-color: var(--buttonColor);
 }
@@ -209,7 +225,7 @@ main {
     margin-bottom: 15%;
 }
 
-.signInContainer form > #signInFormBtn, .signUpContainer form > #signUpFormBtn {
+.signInContainer form > #signInFormBtn, .signUpContainer form > #signUpFormBtn, .recoverAccContainer form > #recoverAccFormBtn {
 
     background-color: var(--buttonColor);
     color: rgba(255, 255, 255, 0.866);
@@ -217,28 +233,33 @@ main {
     border-radius: 5px;
     border-color: var(--buttonColor);
     
+    font-family: "Roboto", sans-serif;
+    
     cursor: pointer;
     transition-duration: .2s;
+    
+    font-size: 1.1em;
+    letter-spacing: 1.6px;
 
     margin-top: 10%;
-    font-weight: 500;
+    font-weight: 900;
     width: 106%;
 
 }
 
-.signInContainer form > #signInFormBtn:hover, .signUpContainer form > #signUpFormBtn:hover { 
+.signInContainer form > #signInFormBtn:hover, .signUpContainer form > #signUpFormBtn:hover, .recoverAccContainer form > #recoverAccFormBtn:hover{ 
     background-color: rgba(255, 255, 255, 0.866);
     color: var(--buttonColor);
 }
 
-.signInContainer > #signUpArrow {
+.signInContainer > #signUpArrow, .recoverAccContainer > #recovery-signInArrow {
 
     position: absolute;
 
     height: 10%;
     width: 10%;
 
-    image-rendering: optimizeSpeed;
+    image-rendering: optimizeQuality;
 
     top: 46%;
     left: 92%;
@@ -263,11 +284,11 @@ main {
     transform: rotate(-90deg);
 
     text-align: center;
-    animation: movingArrow 5s ease-in-out infinite;
+    animation: movingArrow2 5s ease-in-out infinite;
 
 }
 
-.signUpElements {
+.signUpElements, .recovery-signInElements {
 
     position: absolute;
     display: flex;
@@ -300,13 +321,13 @@ main {
 
 }
 
-.signUpElements p {
+.signUpElements p, .recovery-signInElements p {
     color: rgba(245, 245, 245, 0.903);
     font-size: 1.2em;
     text-align: center;
 }
 
-.signUpElements button {
+.signUpElements button, .recovery-signInElements button {
 
     border: none;
     border-radius: .4em;
@@ -326,12 +347,12 @@ main {
 
 }
 
-.signUpElements button:hover {
+.signUpElements button:hover, .recovery-signInElements button:hover {
     background-position-x: 5.8em;
     box-shadow: 0 0 5px 2px rgb(70, 2, 142);
 }
 
-.signUpElements button, p {
+.signUpElements button, p, .recovery-signInElements button, p {
     margin-right: 1px;
     margin-bottom: auto;
 }
@@ -404,7 +425,7 @@ main {
     margin-bottom: auto;
 }
 
-.signInContainer > #signUpArrowHitbox {
+.signInContainer > #signUpArrowHitbox, .recoverAccContainer > #recovery-signInArrowHitbox {
 
     position: absolute;
 
@@ -434,42 +455,6 @@ main {
 -----------------------
 */
 
-.recoverAccContainer {
-
-    position: absolute;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 2em;
-    gap: 1%;
-
-    background-color: var(--backgroundColor);
-
-}
-
-.recoverAccContainer > #recoverAccTitle {
-
-    font-size: 160%;
-    font-weight: bold;
-
-    background-color: #21D4FD;
-    background-image: linear-gradient(90deg, #21D4FD 0%, #B721FF 100%);
-    background-size: 90% 90%;
-    animation: textGradient 10s ease infinite;
-
-    letter-spacing: -1px;
-
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-}
-
 .recoverAccContainer form {
     
     display: flex;
@@ -479,152 +464,6 @@ main {
 
 }
 
-.recoverAccContainer form input {
-
-    width: 100%;
-    padding: 5px;
-    font-size: 1em;
-
-    margin-bottom: 5%;
-
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 3px;
-
-    background: rgba(255, 255, 255, 0.648);
-    color: black;
-    
-    min-width: 0;
-
-    transition-duration: .3s;
-
-}
-
-.recoverAccContainer form input:focus {
-    outline: none;
-    border-color: var(--buttonColor);
-}
-
 .recoverAccContainer form > #recoverAccFormBtn {
-
-    background-color: var(--buttonColor);
-    color: rgba(255, 255, 255, 0.866);
-
-    border-radius: 5px;
-    border-color: var(--buttonColor);
-    
-    cursor: pointer;
-    transition-duration: .2s;
-
     margin-top: 30%;
-    font-weight: 500;
-    width: 106%;
-
-}
-
-.recoverAccContainer form > #recoverAccFormBtn:hover {
-    background-color: rgba(255, 255, 255, 0.866);
-    color: var(--buttonColor);
-}
-
-.recoverAccContainer > #recovery-signInArrow {
-    
-    position: absolute;
-
-    height: 10%;
-    width: 10%;
-
-    image-rendering: optimizeSpeed;
-
-    top: 46%;
-    left: 92%;
-    transform: rotate(90deg);
-
-    text-align: center;
-    animation: movingArrow 5s ease-in-out infinite;
-
-}
-
-.recovery-signInElements {
-
-    position: absolute;
-    display: flex;
-
-    overflow: hidden;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(225deg, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    right: 0;
-    word-wrap: break-word;
-
-    transform: translateX(100%);
-    transform-origin: center right;
-
-    padding: 0 5px 0 5px;
-
-    height: 100%;
-    width: 25.5%;
-
-    border-top-left-radius: .7em;
-    border-bottom-left-radius: .7em;
-
-    transition: transform 300ms cubic-bezier(0.8, 0, 0.2, 1), -webkit-transform 475ms cubic-bezier(0.8, 0, 0.2, 1);
-
-}
-
-.recovery-signInElements p {
-    
-    color: rgba(245, 245, 245, 0.903);
-    font-size: 1.2em;
-    text-align: center;
-
-}
-
-.recovery-signInElements button {
-
-    border: none;
-    border-radius: .4em;
-
-    font-size: 1.3em;
-    font-weight: 900;
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-clip: text;    
-    -webkit-text-fill-color: transparent;
-    
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1);
-
-}
-
-.recovery-signInElements button:hover {
-    background-position-x: 5.8em;
-    box-shadow: 0 0 5px 2px rgb(70, 2, 142);
-}
-
-.recovery-signInElements button, p {
-    margin-right: 1px;
-    margin-bottom: auto;
-}
-
-.recoverAccContainer > #recovery-signInArrowHitbox {
-
-    display: flex;
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    height: 100%;
-    width: 23%;
-
 }
