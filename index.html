@@ -1,116 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="./index.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
-    
+
     <header>
         
-        <span class="material-symbols-outlined menu-button">menu</span>
-
-        <p class="title" style="text-align: center; font-size: 35px;">Portfolio</p>
+        <section>
+            <div class="skewed"></div>
+        </section>        
+        <div class="backgroundBlur"></div>
+        <h1>Portfolio</h1>
 
     </header>
 
     <main>
 
-        <ul class="projects" style="list-style-type: none;">
-            
-            <li>
+        <div class="contents">
 
-                <a href="./projects/calculator/calculator.html">
+            <a href="./projects/calculator/calculator.html">
 
-                    <img 
-                        src="./images/calculator cover gif.gif" 
-                        class="projectCoverImg" 
-                        height="140"
-                        width="230"
-                    >
-
-                </a>
-
-                <a href="./projects/calculator/calculator.html" class="projectTitles">
-
+                <div class="project">
+                    <img src="./images/calculator cover page.png"
+                    class="coverImg">
+    
                     <p>Calculator</p>
+                </div>
 
-                </a>
+            </a>
 
-            </li>
+            <a href="./projects/password-generator/passwordGen.html">
 
-            <li>
-                <a href="./projects/password-generator/passwordGen.html">
-                    <img 
-                        src="./images/password generator cover.png"
-                        class="projectCoverImg"
-                        height="140"
-                        width="230"
-                    >
-                </a>
+                <div class="project">
+                    <img src="./images/password generator cover.png"
+                    class="coverImg">
 
-                <a href="./projects/password-generator/passwordGen.html" class="projectTitles">
                     <p>Password Generator</p>
-                </a>
-            </li>
+                </div>
 
-            <li>
-                
-                <a href="./projects/habit-tracker/habitTracker.html">
-                    <img 
-                        src="./images/habit tracker cover.png" 
-                        class="projectCoverImg"
-                        height="140"
-                        width="230"
-                    >
-                </a>
+            </a>
 
-                <a href="./projects/habit-tracker/habitTracker.html" class="projectTitles">
-                    <p>Habit Tracker <span style="color: rgb(104, 255, 232);">(ON HOLD)</span></p>
-                </a>
+            <a href="./projects/habit-tracker/habitTracker.html">
 
-            </li>
+                <div class="project">
+                    <img src="./images/habit tracker cover.png"
+                    class="coverImg">
 
-            <li>
+                    <p>Habit Tracker <span style="color: rgb(99, 31, 224);">(On Hold)</span></p>
+                </div>
 
-                <a href="./projects/login-page-reworked/lpr.html">
-                    <img src="./videos/login page cover video.gif"
-                        class="projectCoverImg"
-                        height="140" width="230">
-                </a>
+            </a>
 
-                <a href="./projects/login-page-reworked/lpr.html" class="projectTitles">
+            <a href="./projects/login-page-reworked/lpr.html">
+
+                <div class="project">
+                    <img src="./images/login page cover.png"
+                    class="coverImg">
+
                     <p>Login Page</p>
-                </a>
+                </div>
 
-            </li>
+            </a>
 
-            <li>
+            <a href="./projects/todo/todo.html">
 
-                <a href="./projects/todo/todo.html">
-                    <img src="./images/Todo list cover.PNG"
-                    class="projectCoverImg"
-                    height="140" width="230">
-                </a>
+                <div class="project">
+                    <img src="./images/todo list cover.png"
+                    class="coverImg">
 
-                <a href="./projects/todo/todo.html" class="projectTitles">
-                    <p>Todo list <span style="color: orange;">(WIP)</span></p>
-                </a>
+                    <p>To-Do List <span style="color: orangered;">(WIP)</span></p>
+                </div>
 
-            </li>
+            </a>
 
-
-        </ul>
+        </div>
 
     </main>
 
+    <footer>
+        <div>
+            <p>Samuel Ardi. M</p>
+            <p>Thanks to <a href="https://github.com/">GitHub</a> pages for the website</p>
+        </div>
+    </footer>
+    
 </body>
-
 </html>

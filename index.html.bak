@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+</head>
+
+<body>
+    
+    <header>
+        
+        <span class="material-symbols-outlined menu-button">menu</span>
+
+        <p class="title" style="text-align: center; font-size: 35px;">Portfolio</p>
+
+    </header>
+
+    <main>
+
+        <ul class="projects" style="list-style-type: none;">
+            
+            <li>
+
+                <a href="./projects/calculator/calculator.html">
+
+                    <img 
+                        src="./images/calculator cover page.png" 
+                        class="projectCoverImg" 
+                        height="140"
+                        width="230"
+                    >
+
+                </a>
+
+                <a href="./projects/calculator/calculator.html" class="projectTitles">
+
+                    <p>Calculator</p>
+
+                </a>
+
+            </li>
+
+            <li>
+                <a href="./projects/password-generator/passwordGen.html">
+                    <img 
+                        src="./images/password generator cover.png"
+                        class="projectCoverImg"
+                        height="140"
+                        width="230"
+                    >
+                </a>
+
+                <a href="./projects/password-generator/passwordGen.html" class="projectTitles">
+                    <p>Password Generator</p>
+                </a>
+            </li>
+
+            <li>
+                
+                <a href="./projects/habit-tracker/habitTracker.html">
+                    <img 
+                        src="./images/habit tracker cover.png" 
+                        class="projectCoverImg"
+                        height="140"
+                        width="230"
+                    >
+                </a>
+
+                <a href="./projects/habit-tracker/habitTracker.html" class="projectTitles">
+                    <p>Habit Tracker <span style="color: rgb(104, 255, 232);">(ON HOLD)</span></p>
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./projects/login-page-reworked/lpr.html">
+                    <img src="./images/login page cover.png"
+                        class="projectCoverImg"
+                        height="140" width="230">
+                </a>
+
+                <a href="./projects/login-page-reworked/lpr.html" class="projectTitles">
+                    <p>Login Page</p>
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./projects/todo/todo.html">
+                    <img src="./images/Todo list cover.PNG"
+                    class="projectCoverImg"
+                    height="140" width="230">
+                </a>
+
+                <a href="./projects/todo/todo.html" class="projectTitles">
+                    <p>Todo list <span style="color: orange;">(WIP)</span></p>
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </main>
+
+</body>
+
+</html>
