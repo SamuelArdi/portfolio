@@ -6,7 +6,6 @@
     --secondary: #dd93c0;
     --accent: #d27384;
 
-
 }
 
 body {
@@ -19,10 +18,12 @@ body {
 }
 
 #title {
+
     text-align: center;
     font-size: 3em;
 
     background: linear-gradient(to right, var(--primary) 0, var(--accent) 100%);
+    background-size: 90% 90%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -37,7 +38,10 @@ body {
     align-items:baseline;
     justify-content: center;
 
+    margin-top: 5%;
     gap: 5%;
+
+    height: max-content;
     
 }
 
@@ -57,6 +61,12 @@ body {
     background-color: var(--primary);
     color: var(--background);
 
+    overflow: hidden;
+
+}
+
+.todo-title h1 {
+    margin-left: 20px;
 }
 
 .todo-tasks {
@@ -67,14 +77,52 @@ body {
 
     border-radius: .3em;
 
+    font-size: 1.4em;
+
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
+
+    padding: 7px;
+    gap: 5px;
 
     background-color: var(--secondary);
 
 }
 
+.todo-tasks input {
+
+    width: 1.5em;
+    height: 1.5em;
+
+}
+
 .todo-tasks label, input {
+
     cursor: pointer;
     text-align: start;
+    color: var(--text);
+
+}
+
+.addTask{
+
+    cursor: pointer;
+    text-align: end;
+
+    margin-left: auto;
+    margin-right: 20px;
+
+}
+
+.addTask > .fa-plus {
+
+    color: var(--background);
+    font-size: 2.5em;
+
+    transition-duration: .3s;
+
+}
+
+.addTask > .fa-plus:hover {
+    color: #00FF8C;
 }
