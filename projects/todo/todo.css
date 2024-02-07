@@ -119,10 +119,81 @@ body {
     color: var(--background);
     font-size: 2.5em;
 
-    transition-duration: .3s;
+    transition-duration: .2s;
 
 }
 
 .addTask > .fa-plus:hover {
     color: #00FF8C;
+}
+
+.task {
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    overflow: hidden;
+    
+}
+
+.task > .taskLabel {overflow: hidden;}
+
+.task > .taskEdit {
+
+    cursor: pointer;
+    text-align: end;
+
+    margin-left: auto;
+    margin-right: 3px;
+
+}
+
+.taskEdit > .fa-pen-to-square {
+    color: var(--text);
+    transition-duration: .2s;
+}
+
+.taskEdit > .fa-pen-to-square:hover {
+    color: var(--primary);
+}
+
+.cancelEdit {
+
+    cursor: pointer;
+    text-align: end;
+
+    margin-left: auto;
+    margin-right: 3px;
+    margin-top: 2px;
+
+}
+
+.cancelEdit > .fa-circle-xmark {
+    color: var(--text);
+    transition-duration: .2s;
+}
+
+.cancelEdit > .fa-circle-xmark:hover {color: var(--primary)}
+
+.taskLabel > .taskEditInput {
+
+    cursor: text;
+    
+    background-color: transparent;
+    border-color: var(--text);
+    border: solid;
+    border-width: 0 0 2px 0;
+
+    color: var(--text);
+    width: 80%;
+
+}
+
+.taskLabel > .taskEditInput:focus {
+
+    outline: none;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 3px 3px 0 0;
+
 }

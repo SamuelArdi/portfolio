@@ -1,138 +1,252 @@
-const addTaskBtn = document.querySelectorAll(".addTask")
+// Notes:
+// The recurrence of the edit button being mentioned a couple of times is because without it being mentioned the button will not work.
 
-const todoTasksMorning = document.querySelector("div[id=js-todoTasks-morning]");
-const todoTasksNoon = document.querySelector("div[id=js-todoTasks-noon]");
-const todoTasksAfternoon = document.querySelector("div[id=js-todoTasks-afternoon]");
-const todoTasksEvening = document.querySelector("div[id=js-todoTasks-evening]");
+const addTask = document.querySelectorAll(".addTask");
 
-var morningTasks = 0;
-var noonTasks = 0;
-var afternoonTasks = 0;
-var eveningTasks = 0;
+const morning = document.getElementById("js-todoTasks-morning");
+const noon = document.getElementById("js-todoTasks-noon");
+const afternoon = document.getElementById("js-todoTasks-afternoon");
+const evening = document.getElementById("js-todoTasks-evening");
 
-const addTask = {
+var morningTask_counter = 0;
+var noonTask_counter = 0;
+var afternoonTask_counter = 0;
+var eveningTask_counter = 0;
 
-    morning() {
+function createTask(category) {
 
-        // new label
-        let createLabel = document.createElement("label");
-        createLabel.className = "morningTasks";
-        createLabel.setAttribute("for", "morningTask-" + morningTasks);
+    // houses all of the individual tasks
+    const task = document.createElement("div");
+    task.className = "task";
 
-        // new input
-        let createInput = document.createElement("input");
-        createInput.type = "checkbox";
-        createInput.id = "morningTask-" + morningTasks;
+    switch (category) {
+        
+        case "morning":
 
-        // new span
-        let createSpan = document.createElement("span");
-
-        // append
-        todoTasksMorning.appendChild(createLabel);
-        createLabel.appendChild(createInput);
-        createLabel.appendChild(createSpan);
-
-        morningTasks++
-
-    },
-
-    noon() {
-
-        // new label
-        let createLabel = document.createElement("label");
-        createLabel.className = "noonTasks";
-        createLabel.setAttribute("for", "noonTask-" + noonTasks);
-
-        // new input
-        let createInput = document.createElement("input");
-        createInput.type = "checkbox";
-        createInput.id = "noonTask-" + noonTasks;
-
-        // new span
-        let createSpan = document.createElement("span");
-
-        // append
-        todoTasksNoon.appendChild(createLabel);
-        createLabel.appendChild(createInput);
-        createLabel.appendChild(createSpan);
-
-        noonTasks++;
-
-    },
-
-    afternoon() {
-
-        // new label
-        let createLabel = document.createElement("label");
-        createLabel.className = "afternoonTasks";
-        createLabel.setAttribute("for", "afternoonTask-" + afternoonTasks);
-
-        // new input
-        let createInput = document.createElement("input");
-        createInput.type = "checkbox";
-        createInput.id = "afternoonTask-" + afternoonTasks;
-
-        // new span
-        let createSpan = document.createElement("span");
-
-        // append
-        todoTasksAfternoon.appendChild(createLabel);
-        createLabel.appendChild(createInput);
-        createLabel.appendChild(createSpan);
-
-        afternoonTasks++;
-
-    },
-
-    evening() {
-
-        // new label
-        let createLabel = document.createElement("label");
-        createLabel.className = "eveningTasks";
-        createLabel.setAttribute("for", "eveningTask-" + eveningTasks);
-
-        // new input
-        let createInput = document.createElement("input");
-        createInput.type = "checkbox";
-        createInput.id = "eveningTask-" + eveningTasks;
-
-        // new span
-        let createSpan = document.createElement("span");
-
-        // append
-        todoTasksEvening.appendChild(createLabel);
-        createLabel.appendChild(createInput);
-        createLabel.appendChild(createSpan);
-
-        eveningTasks++;
-
-    },
-
-}
-
-function selectCategory(category) {
-
-    switch(category) {
-
-        case 'addTask-morning':
-            addTask.morning();
+            morningTask_counter += 1;
+            task.id = `morningTask-${morningTask_counter}`;
             break;
-        case 'addTask-noon':
-            addTask.noon();
+        
+        case "noon":
+
+            noonTask_counter += 1;
+            task.id = `noonTask-${noonTask_counter}`;
             break;
-        case 'addTask-afternoon':
-            addTask.afternoon();
+
+        case "afternoon":
+
+            afternoonTask_counter += 1;
+            task.id = `afternoonTask-${afternoonTask_counter}`;
             break;
-        case 'addTask-evening':
-            addTask.evening();
+
+        case "evening":
+
+            eveningTask_counter += 1;
+            task.id = `eveningTask-${eveningTask_counter}`;
             break;
 
     }
 
+    const taskLabel = document.createElement("label");
+    taskLabel.className = "taskLabel";
+
+    const taskInput = document.createElement("input");
+    taskInput.type = "checkbox";
+    taskInput.className = "taskInput";
+
+    const taskText = document.createElement("span");
+    taskText.className = "taskText";
+
+    switch (category) {
+
+        case "morning":
+
+            taskText.innerHTML = "Morning Task";
+            break;
+        case "noon":
+
+            taskText.innerHTML = "Noon Task";
+            break;
+
+        case "afternoon":
+
+            taskText.innerHTML = "Afternoon Task";
+            break;
+
+        case "evening":
+
+            taskText.innerHTML = "Evening Task";
+            break;
+
+    }
+
+    const taskEdit = document.createElement("span");
+    taskEdit.className = "taskEdit";
+
+    switch (category) {
+        
+        case "morning":
+            taskEdit.id = "morningTask-" + morningTask_counter;
+            break;
+
+        case "noon":
+            taskEdit.id = "noonTask-" + noonTask_counter;
+            break;
+        
+        case "afternoon":
+            taskEdit.id = "afternoonTask-" + afternoonTask_counter;
+            break;
+
+        case "evening":
+            taskEdit.id = "eveningTask-" + eveningTask_counter;
+            break;
+
+    }
+
+    const taskEditSvg = document.createElement("i");
+    taskEditSvg.className = "fa-regular fa-pen-to-square";
+
+    switch (category) {
+        
+        case "morning":
+
+            morning.appendChild(task);
+            break;
+
+        case "noon":
+
+            noon.appendChild(task);
+            break;
+
+        case "afternoon":
+
+            afternoon.appendChild(task);
+            break;
+
+        case "evening":
+
+            evening.appendChild(task);
+            break;
+
+    }
+
+    task.appendChild(taskLabel);
+    task.appendChild(taskEdit);
+    taskEdit.appendChild(taskEditSvg);
+    taskLabel.appendChild(taskInput);
+    taskLabel.appendChild(taskText);
+
+    // This will pop up a couple of times on this code
+    taskEdit.addEventListener("click", () => {
+        editTask(taskEdit.id);
+    })
+
 }
 
-addTaskBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        selectCategory(btn.id);
+function editTask(id) {
+
+    const task = document.getElementById(id);
+    const taskText = task.children[0].children[1];
+
+    const previousText = taskText.innerHTML;
+    const taskEditBtn = task.children[1];
+
+    // Creates replacements and appends them
+    let editTaskInput = document.createElement("input");
+    editTaskInput.className = "taskEditInput";
+    editTaskInput.type = "text";
+
+    let cancelEdit = document.createElement("span");
+    cancelEdit.className = "cancelEdit";
+
+    let cancelEditSvg = document.createElement("i");
+    cancelEditSvg.className = "fa-regular fa-circle-xmark";
+
+    cancelEdit.appendChild(cancelEditSvg);
+    // 
+
+    taskText.innerHTML = "";
+    editTaskInput.value = previousText;
+    taskText.replaceWith(editTaskInput);
+    taskEditBtn.replaceWith(cancelEdit);
+
+    // Disables the checkbox
+    task.children[0].children[0].disabled = true;
+
+    cancelEdit.addEventListener("click", () => {
+        cancelTaskEdit(id, previousText, editTaskInput, cancelEdit);
     })
+
+    editTaskInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            saveTaskEdit(id, editTaskInput, cancelEdit);
+        }
+    })
+
+}
+
+function saveTaskEdit(id, editTaskInput, cancelEdit) {
+    
+    const task = document.getElementById(id);
+    const taskText = task.children[0].children[1].value;
+
+    let revertText = document.createElement("span");
+    revertText.className = "taskText";
+    revertText.innerHTML = taskText;
+
+    let revertBtn = document.createElement("span");
+    revertBtn.className = "taskEdit";
+
+    let revertBtnSvg = document.createElement("i");
+    revertBtnSvg.className = "fa-regular fa-pen-to-square";
+    
+    revertBtn.appendChild(revertBtnSvg);
+
+    // Revert back to default
+    editTaskInput.replaceWith(revertText);
+    cancelEdit.replaceWith(revertBtn);
+    task.children[0].children[0].disabled = false;
+
+    revertBtn.addEventListener("click", () => {
+        editTask(id);
+    })
+
+
+}
+
+function cancelTaskEdit(id, previousText, editTaskInput, cancelEdit) {
+
+    const task = document.getElementById(id);
+
+    let revertText = document.createElement("span");
+    revertText.className = "taskText";
+    revertText.innerHTML = previousText;
+
+    let revertBtn = document.createElement("span");
+    revertBtn.className = "taskEdit";
+
+    let revertBtnSvg = document.createElement("i");
+    revertBtnSvg.className = "fa-regular fa-pen-to-square";
+    
+    revertBtn.appendChild(revertBtnSvg);
+
+    // Revert back to default
+    editTaskInput.replaceWith(revertText);
+    cancelEdit.replaceWith(revertBtn);
+    task.children[0].children[0].disabled = false;
+
+    revertBtn.addEventListener("click", () => {
+        editTask(id);
+    })
+
+}
+
+addTask.forEach((task) => {
+
+    task.addEventListener("click", () => {
+
+        createTask(task.id.split("-")[1]);
+
+    })
+
 })
