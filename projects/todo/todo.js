@@ -2,6 +2,7 @@
 // The recurrence of the edit button being mentioned a couple of times is because without it being mentioned the button will not work.
 
 const addTask = document.querySelectorAll(".addTask");
+const todoTasks = document.querySelectorAll(".todo-tasks");
 
 const morning = document.getElementById("js-todoTasks-morning");
 const noon = document.getElementById("js-todoTasks-noon");
@@ -12,6 +13,12 @@ var morningTask_counter = 0;
 var noonTask_counter = 0;
 var afternoonTask_counter = 0;
 var eveningTask_counter = 0;
+
+window.onload = () => {
+    todoTasks.forEach((task) => {
+        task.style.visibility = "hidden";
+    })
+}
 
 function createTask(category) {
 
@@ -25,24 +32,28 @@ function createTask(category) {
 
             morningTask_counter += 1;
             task.id = `morningTask-${morningTask_counter}`;
+            morning.style.visibility = "visible";
             break;
         
         case "noon":
 
             noonTask_counter += 1;
             task.id = `noonTask-${noonTask_counter}`;
+            noon.style.visibility = "visible";
             break;
 
         case "afternoon":
 
             afternoonTask_counter += 1;
             task.id = `afternoonTask-${afternoonTask_counter}`;
+            afternoon.style.visibility = "visible";
             break;
 
         case "evening":
 
             eveningTask_counter += 1;
             task.id = `eveningTask-${eveningTask_counter}`;
+            evening.style.visibility = "visible";
             break;
 
     }
@@ -106,6 +117,12 @@ function createTask(category) {
     const taskEditSvg = document.createElement("i");
     taskEditSvg.className = "fa-regular fa-pen-to-square";
 
+    const taskDelete = document.createElement("span");
+    taskDelete.className = "taskDelete";
+
+    const taskDeleteSvg = document.createElement("i");
+    taskDeleteSvg.className = "fa-regular fa-trash-can";
+
     switch (category) {
         
         case "morning":
@@ -132,18 +149,26 @@ function createTask(category) {
 
     task.appendChild(taskLabel);
     task.appendChild(taskEdit);
+    task.appendChild(taskDelete);
+
+    taskDelete.appendChild(taskDeleteSvg);
     taskEdit.appendChild(taskEditSvg);
+
     taskLabel.appendChild(taskInput);
     taskLabel.appendChild(taskText);
 
     // This will pop up a couple of times on this code
     taskEdit.addEventListener("click", () => {
-        editTask(taskEdit.id);
+        editTask(taskEdit.id, taskDelete);
+    })
+
+    taskDelete.addEventListener("click", () => {
+        deleteTask(task.id);
     })
 
 }
 
-function editTask(id) {
+function editTask(id, taskDeleteBtn) {
 
     const task = document.getElementById(id);
     const taskText = task.children[0].children[1];
@@ -239,6 +264,11 @@ function cancelTaskEdit(id, previousText, editTaskInput, cancelEdit) {
         editTask(id);
     })
 
+}
+
+function deleteTask(id) {
+    const task = document.getElementById(id);
+    task.remove();
 }
 
 addTask.forEach((task) => {

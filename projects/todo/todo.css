@@ -77,7 +77,7 @@ body {
 
     border-radius: .3em;
 
-    font-size: 1.4em;
+    font-size: 1.1em;
 
     margin-top: 5%;
     margin-bottom: 10%;
@@ -132,12 +132,16 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 12.8em;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
 
     overflow: hidden;
     
 }
 
-.task > .taskLabel {overflow: hidden;}
+.task > .taskLabel {max-width: 10em;}
 
 .task > .taskEdit {
 
@@ -146,16 +150,27 @@ body {
 
     margin-left: auto;
     margin-right: 3px;
+    margin-top: 3px;
 
 }
 
-.taskEdit > .fa-pen-to-square {
+.taskEdit > .fa-pen-to-square, .cancelEdit > .fa-circle-xmark, .taskDelete > .fa-trash-can {
     color: var(--text);
     transition-duration: .2s;
 }
 
-.taskEdit > .fa-pen-to-square:hover {
+.taskEdit > .fa-pen-to-square:hover, .cancelEdit > .fa-circle-xmark:hover, .taskDelete > .fa-trash-can:hover {
     color: var(--primary);
+}
+
+.task > .taskDelete {
+
+    cursor: pointer;
+    text-align: center;
+
+    margin-right: 3px;
+    margin-top: 3px;
+
 }
 
 .cancelEdit {
@@ -165,16 +180,9 @@ body {
 
     margin-left: auto;
     margin-right: 3px;
-    margin-top: 2px;
+    margin-top: 4px;
 
 }
-
-.cancelEdit > .fa-circle-xmark {
-    color: var(--text);
-    transition-duration: .2s;
-}
-
-.cancelEdit > .fa-circle-xmark:hover {color: var(--primary)}
 
 .taskLabel > .taskEditInput {
 
@@ -188,12 +196,20 @@ body {
     color: var(--text);
     width: 80%;
 
+    transition-duration: .2s;
+
 }
 
 .taskLabel > .taskEditInput:focus {
 
-    outline: none;
-    border-width: 2px 2px 2px 2px;
-    border-radius: 3px 3px 0 0;
+    outline: none; 
+    border-width: 2px 0 2px 0;
+    border-radius: 4px;
+    border-color: var(--primary);
 
+}
+
+.taskLabel > .taskText {
+    overflow: hidden;
+    padding-left: 5px;
 }
