@@ -206,12 +206,18 @@ function editTask(id) {
     task.children[0].children[0].disabled = true;
 
     cancelEdit.addEventListener("click", () => {
-        completeTaskEdit(id, previousText, editTaskInput, cancelEdit, "cancel");
+        cancelTaskEdit(id, previousText, editTaskInput, cancelEdit);
+    })
+
+    cancelEdit.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            cancelTaskEdit(id, previousText, editTaskInput, cancelEdit);
+        }
     })
 
     editTaskInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-            completeTaskEdit(id, previousText, editTaskInput, cancelEdit, "save");
+            saveTaskEdit(id, editTaskInput, cancelEdit);
         }
     })
 
@@ -220,16 +226,16 @@ function editTask(id) {
 function completeTaskEdit(id, previousText, editTaskInput, cancelEdit, taskEditMode) {
 
     const task = document.getElementById(id);
+    const taskText = task.children[0].children[1];
 
-    // Revert back to default
     let revertText = document.createElement("span");
     revertText.className = "taskText";
 
     if (taskEditMode === "save") {
-        revertText.innerHTML = editTaskInput.value;
+        revertText.innerHTML = previousText;
     }
     else if (taskEditMode === "cancel") {
-        revertText.innerHTML = previousText;
+        revertText.innerHTML = editTaskInput.value;
     }
     else {
         revertText.innerHTML = previousText;
@@ -250,18 +256,63 @@ function completeTaskEdit(id, previousText, editTaskInput, cancelEdit, taskEditM
     let revertBtnSvg = document.createElement("i");
     revertBtnSvg.className = "fa-regular fa-pen-to-square";
 
+    revertBtn.appendChild(revertBtnSvg);
+
     // Revert back to default
     editTaskInput.replaceWith(revertText);
     cancelEdit.replaceWith(revertBtn);
-
-    // Enables the checkbox
     task.children[0].children[0].disabled = false;
 
     task.appendChild(revertDiv);
-    
+    revertDiv.appendChild(revertDeleteBtn);
+
     revertDiv.appendChild(revertBtn);
-    revertBtn.appendChild(revertBtnSvg);
+    revertDeleteBtn.appendChild(revertDeleteBtnSvg);
+
+    revertBtn.addEventListener("click", () => {
+        completeTaskEdit(id, previousText, editTaskInput, cancelEdit, "save");        
+    })
+
+    revertDeleteBtn.addEventListener("click", () => {
+        completeTaskEdit(id, previousText, editTaskInput, cancelEdit, "cancel");
+    })
+
+}
+
+function saveTaskEdit(id, editTaskInput, cancelEdit) {
     
+    const task = document.getElementById(id);
+    const taskText = task.children[0].children[1].value;
+
+    let revertText = document.createElement("span");
+    revertText.className = "taskText";
+    revertText.innerHTML = taskText;
+
+    let revertDiv = document.createElement("div");
+    revertDiv.className = "taskEditBtns";
+
+    let revertDeleteBtn = document.createElement("span");
+    revertDeleteBtn.className = "taskDelete modifyTask";
+    
+    let revertDeleteBtnSvg = document.createElement("i");
+    revertDeleteBtnSvg.className = "fa-regular fa-trash-can";
+
+    let revertBtn = document.createElement("span");
+    revertBtn.className = "taskEdit modifyTask";
+
+    let revertBtnSvg = document.createElement("i");
+    revertBtnSvg.className = "fa-regular fa-pen-to-square";
+    
+    revertBtn.appendChild(revertBtnSvg);
+
+    // Revert back to default
+    editTaskInput.replaceWith(revertText);
+    cancelEdit.replaceWith(revertBtn);
+    task.children[0].children[0].disabled = false;
+
+    task.appendChild(revertDiv);
+    revertDiv.appendChild(revertBtn);
+
     revertDiv.appendChild(revertDeleteBtn);
     revertDeleteBtn.appendChild(revertDeleteBtnSvg);
 
@@ -271,6 +322,48 @@ function completeTaskEdit(id, previousText, editTaskInput, cancelEdit, taskEditM
 
     revertDeleteBtn.addEventListener("click", () => {
         deleteTask(id);
+    })
+
+}
+
+function cancelTaskEdit(id, previousText, editTaskInput, cancelEdit) {
+
+    const task = document.getElementById(id);
+
+    let revertText = document.createElement("span");
+    revertText.className = "taskText";
+    revertText.innerHTML = previousText;
+
+    let revertDiv = document.createElement("div");
+    revertDiv.className = "taskEditBtns";
+
+    let revertBtn = document.createElement("span");
+    revertBtn.className = "taskEdit modifyTask";
+
+    let revertBtnSvg = document.createElement("i");
+    revertBtnSvg.className = "fa-regular fa-pen-to-square";
+
+    let revertDeleteBtn = document.createElement("span");
+    revertDeleteBtn.className = "taskDelete modifyTask";
+
+    let revertDeleteBtnSvg = document.createElement("i");
+    revertDeleteBtnSvg.className = "fa-regular fa-trash-can";
+    
+    revertBtn.appendChild(revertBtnSvg);
+
+    // Revert back to default
+    editTaskInput.replaceWith(revertText);
+    cancelEdit.replaceWith(revertBtn);
+    task.children[0].children[0].disabled = false;
+
+    task.appendChild(revertDiv);
+    revertDiv.appendChild(revertBtn);
+
+    revertDiv.appendChild(revertDeleteBtn);
+    revertDeleteBtn.appendChild(revertDeleteBtnSvg);
+
+    revertBtn.addEventListener("click", () => {
+        editTask(id);
     })
 
 }

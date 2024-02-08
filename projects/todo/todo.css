@@ -23,7 +23,7 @@ body {
     font-size: 3em;
 
     background: linear-gradient(to right, var(--primary) 0, var(--accent) 100%);
-    background-size: 90% 90%;
+    background-size: 100% 100%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -138,12 +138,15 @@ body {
     padding-bottom: 5px;
 
     overflow: hidden;
+
+    transition-timing-function: ease-in-out;
+    transition-duration: .2s;
     
 }
 
 .task > .taskLabel {max-width: 10em;}
 
-.task > .taskEdit {
+.taskEditBtns > .taskEdit {
 
     cursor: pointer;
     text-align: end;
@@ -163,7 +166,7 @@ body {
     color: var(--primary);
 }
 
-.task > .taskDelete {
+.taskEditBtns > .taskDelete {
 
     cursor: pointer;
     text-align: center;
@@ -184,6 +187,54 @@ body {
 
 }
 
+.task > .modifyTask, .task > .taskEditBtns {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.task > .taskEditBtns {
+
+    margin-left: auto;
+    margin-right: 3px;
+    gap: 10px;
+    
+}
+
+.modifyTask svg {
+    font-size: 1.2em;
+}
+
+.task > .taskLabel {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.taskLabel > .taskLabel > .taskText {
+    
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.taskLabel > .taskInput {
+
+    width: 1.7em;
+    height: 1.7em;
+
+    min-width: 1.7em;
+    min-height: 1.7em;
+
+}
+
 .taskLabel > .taskEditInput {
 
     cursor: text;
@@ -193,8 +244,14 @@ body {
     border: solid;
     border-width: 0 0 2px 0;
 
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: .9em;
+
     color: var(--text);
-    width: 80%;
+    width: 100%;
 
     transition-duration: .2s;
 
@@ -212,4 +269,5 @@ body {
 .taskLabel > .taskText {
     overflow: hidden;
     padding-left: 5px;
+    font-size: 1.2em;
 }
