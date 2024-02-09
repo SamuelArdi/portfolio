@@ -14,12 +14,6 @@ var noonTask_counter = 0;
 var afternoonTask_counter = 0;
 var eveningTask_counter = 0;
 
-window.onload = () => {
-    todoTasks.forEach((task) => {
-        task.style.visibility = "hidden";
-    })
-}
-
 function createTask(category) {
 
     // houses all of the individual tasks
@@ -276,8 +270,25 @@ function completeTaskEdit(id, previousText, editTaskInput, cancelEdit, taskEditM
 }
 
 function deleteTask(id) {
+
     const task = document.getElementById(id);
     task.remove();
+
+    // hide the tasks box if all of them are deleted
+    if (morning.children.length === 0) {
+        morning.style.visibility = "hidden";
+    }
+    if (noon.children.length === 0) {
+
+        noon.style.visibility = "hidden"; 
+    }
+    if (afternoon.children.length === 0) {
+        afternoon.style.visibility = "hidden";
+    }
+    if (evening.children.length === 0) {
+        evening.style.visibility =  "hidden";
+    }
+
 }
 
 addTask.forEach((task) => {

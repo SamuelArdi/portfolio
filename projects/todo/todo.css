@@ -82,6 +82,8 @@ body {
     margin-top: 5%;
     margin-bottom: 10%;
 
+    visibility: hidden;
+
     padding: 7px;
     gap: 5px;
 
@@ -171,7 +173,7 @@ body {
     cursor: pointer;
     text-align: center;
 
-    margin-right: 3px;
+    margin-right: 4px;
     margin-top: 3px;
 
 }
