@@ -126,6 +126,8 @@ body {
 }
 
 .addTask > .fa-plus:hover {
+
+    transform: scale(1.1);
     color: #00FF8C;
 }
 
@@ -159,12 +161,12 @@ body {
 
 }
 
-.taskEdit > .fa-pen-to-square, .cancelEdit > .fa-circle-xmark, .taskDelete > .fa-trash-can {
+.taskEdit > .fa-pen-to-square, .cancelEdit > .fa-xmark, .taskDelete > .fa-trash-can {
     color: var(--text);
     transition-duration: .2s;
 }
 
-.taskEdit > .fa-pen-to-square:hover, .cancelEdit > .fa-circle-xmark:hover, .taskDelete > .fa-trash-can:hover {
+.taskEdit > .fa-pen-to-square:hover, .cancelEdit > .fa-xmark:hover, .taskDelete > .fa-trash-can:hover {
     color: var(--primary);
 }
 
@@ -184,7 +186,7 @@ body {
     text-align: end;
 
     margin-left: auto;
-    margin-right: 3px;
+    margin-right: .7rem;
     margin-top: 4px;
 
 }
@@ -272,4 +274,98 @@ body {
     overflow: hidden;
     padding-left: 5px;
     font-size: 1.2em;
+}
+
+.undoChanges {
+
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: end;
+
+    gap: 10px;
+
+    width: max-content;
+    height: 10rem;
+    padding-bottom: 5px;
+
+    position: sticky;
+
+    bottom: 0;
+    left: .5;
+
+    overflow: hidden;
+
+}
+
+.undoChanges > .undo {
+
+    width: max-content;
+    height: 2em;
+
+    border-style: solid;
+    border-radius: .5em;
+
+    padding-right: 5px;
+    padding-left: 5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 5px;
+
+    transform-origin: bottom left;
+
+    transition-duration: .2s;
+
+}
+
+.undoChanges > .undo:hover {
+
+    background-color: var(--primary);
+    color: var(--background);
+    border-color: var(--primary);
+
+}
+
+.undoChanges > .undo:hover > button {
+    color: var(--secondary);
+}
+
+.undoChanges > .undo:hover > button:hover {
+    color: var(--accent);
+}
+
+.undo button {
+
+    margin-bottom: 4px;
+
+    border: none;
+    background: none;
+
+    color: var(--primary);
+    font-size: 1.1em;
+
+    cursor: pointer;
+
+    transition-duration: .2s;
+
+}
+
+.undo > .cancelUndo {
+
+    cursor: pointer;
+    text-align: end;
+
+    margin-left: 20px;
+
+    font-size: large;
+
+    transition-duration: .2s;
+
+}
+
+.undo > .cancelUndo:hover {
+    color: var(--accent);
 }

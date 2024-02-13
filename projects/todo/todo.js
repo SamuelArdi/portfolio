@@ -4,6 +4,9 @@
 const addTask = document.querySelectorAll(".addTask");
 const todoTasks = document.querySelectorAll(".todo-tasks");
 
+const undoChangesClass = document.querySelector(".undoChanges");
+const undoChanges = document.querySelectorAll(".undo");
+
 const morning = document.getElementById("js-todoTasks-morning");
 const noon = document.getElementById("js-todoTasks-noon");
 const afternoon = document.getElementById("js-todoTasks-afternoon");
@@ -19,6 +22,7 @@ function createTask(category) {
     // houses all of the individual tasks
     const task = document.createElement("div");
     task.className = "task";
+    task.style.visibility = "visible";
 
     switch (category) {
         
@@ -186,7 +190,7 @@ function editTask(id) {
     cancelEdit.className = "cancelEdit";
 
     let cancelEditSvg = document.createElement("i");
-    cancelEditSvg.className = "fa-regular fa-circle-xmark";
+    cancelEditSvg.className = "fa-solid fa-xmark";
 
     cancelEdit.appendChild(cancelEditSvg);
     // 
@@ -271,7 +275,34 @@ function completeTaskEdit(id, previousText, editTaskInput, cancelEdit, taskEditM
 
 function deleteTask(id) {
 
+    // decreases the counter
+    // reminder for future me:
+    //   If this method doesn't work out that well,
+    //   you can also reset the counter instead of decreasing it,
+    //   and set it to 0 whenever there are not tasks.
+
+    let index = id.indexOf("-");
+    let category = id.slice(0, index);
+
+    switch (category) {
+        
+        case "morningTask":
+            morningTask_counter -= 1;
+            break;
+        case "noonTask":
+            noonTask_counter -= 1;
+            break;
+        case "afternoonTask":
+            afternoonTask_counter -= 1;
+            break;
+        case "eveningTask":
+            eveningTask_counter -= 1;
+            break;
+
+    }
+
     const task = document.getElementById(id);
+    let backupTask = task;
     task.remove();
 
     // hide the tasks box if all of them are deleted
@@ -279,7 +310,6 @@ function deleteTask(id) {
         morning.style.visibility = "hidden";
     }
     if (noon.children.length === 0) {
-
         noon.style.visibility = "hidden"; 
     }
     if (afternoon.children.length === 0) {
@@ -287,6 +317,93 @@ function deleteTask(id) {
     }
     if (evening.children.length === 0) {
         evening.style.visibility =  "hidden";
+    }
+
+    undoConfirmation(id, backupTask);
+
+}
+
+async function undoConfirmation(id, backupTask) {
+
+    const undoClass = document.createElement("div");
+    undoClass.className = "undo";
+    undoClass.dataset.removedTask = id;
+
+    const textReminder = document.createElement("p");
+    textReminder.innerHTML = "You have removed a task";
+    
+    const undoBtn = document.createElement("button");
+    undoBtn.innerHTML = "undo?";
+
+    const cancelUndo = document.createElement("span");
+    cancelUndo.className = "cancelUndo";
+
+    const cancelUndoSvg = document.createElement("i");
+    cancelUndoSvg.className = "fa-solid fa-xmark";
+
+    undoChangesClass.appendChild(undoClass);
+    undoClass.appendChild(textReminder);
+    undoClass.appendChild(undoBtn);
+    undoClass.appendChild(cancelUndo);
+    cancelUndo.appendChild(cancelUndoSvg);
+
+    undoBtn.addEventListener("click", () => {
+        Undos.undoChange(backupTask, undoClass.dataset.removedTask, undoClass);
+    })
+
+    cancelUndo.addEventListener("click", () => {
+        Undos.cancelUndo(undoClass);
+    })
+
+    await new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+           undoClass.remove(); 
+        }, 5500);
+
+    })
+
+}
+
+const Undos = {
+
+    cancelUndo(undoClass) {
+
+
+        undoClass.remove();
+
+    },
+
+    undoChange(backupTask, dataset, undoClass) {
+
+        let index = dataset.indexOf("-");
+        let category = dataset.slice(0, index);
+
+        switch (category) {
+
+            case "morningTask":
+                morning.appendChild(backupTask);
+                undoClass.remove();
+                if (morning.children.length >= 0) {morning.style.visibility = "visible"};
+                break;
+            case "noonTask":
+                noon.appendChild(backupTask);
+                undoClass.remove();
+                if(noon.children.length >= 0)  {noon.style.visibility = "visible"};
+                break;
+            case "afternoonTask":
+                afternoon.appendChild(backupTask);
+                undoClass.remove();
+                if(afternoon.children.length >= 0)  {afternoon.style.visibility = "visible"};
+                break;
+            case "eveningTask":
+                evening.appendChild(backupTask);
+                undoClass.remove();
+                if(evening.children.length >= 0)  {evening.style.visibility = "visible"};
+                break;
+
+        }
+
     }
 
 }
