@@ -8,10 +8,31 @@
 
 }
 
+@keyframes rotatingColors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
 body {
     font-family: "Roboto", sans-serif;
     color: var(--text);
     background-color: var(--background);
+    margin: 0px;
+    padding: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
     margin: 0;
 }
 
@@ -26,6 +47,7 @@ footer a {
 
 h1 {
     text-align: center;
+    font-size: 3rem;
 }
 
 .skewed {
@@ -37,20 +59,40 @@ h1 {
     width: 100%;
     height: 60%;
     background: var(--secondary);
-    z-index: -2;
+    z-index: -3;
     transform: skewY(10deg);
     transform-origin: top right;
 }
 
 .backgroundBlur {
-    height: 100%;
     width: 100%;
+    height: 100%;
     top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
     position: absolute;
-    backdrop-filter: blur(12vmax);
+    backdrop-filter: blur(15vmax);
     z-index: -2;
 }
 
+.backgroundEffects {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+}
+
+.backgroundEffects_rotatingColors {
+    background: linear-gradient(to right, var(--primary) 0, var(--secondary));
+    height: 35%;
+    width: 18%;
+    animation: rotatingColors 5s linear infinite;
+    transition-duration: .5s;
+}
 
 /*
 Projects
@@ -62,8 +104,9 @@ Projects
 
     flex-direction: row;
     align-items: baseline;
+    justify-content: center;
 
-    gap: 3%;
+    gap: 3.5%;
 
     margin-top: 5em;
     margin-left: 3em;
