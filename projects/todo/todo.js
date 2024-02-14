@@ -7,6 +7,11 @@ const todoTasks = document.querySelectorAll(".todo-tasks");
 const undoChangesClass = document.querySelector(".undoChanges");
 const undoChanges = document.querySelectorAll(".undo");
 
+const changeThemeDiv = document.querySelector(".changeTheme");
+const changeThemeBtn = document.getElementById("js-changeThemeBtn");
+
+const taskTitles = document.querySelectorAll(".task-titles");
+
 const morning = document.getElementById("js-todoTasks-morning");
 const noon = document.getElementById("js-todoTasks-noon");
 const afternoon = document.getElementById("js-todoTasks-afternoon");
@@ -408,6 +413,83 @@ const Undos = {
 
 }
 
+function changeTheme_get(theme) {
+
+    let text;
+    let background;
+    let primary;
+    let secondary;
+    let accent;
+
+    if (theme === "light") {
+
+        text = "#e4e4f7";
+        background = "#1d1d20";
+        primary = "#8439f3";
+        secondary = "#6d224f";
+        accent = "#8b2d3e";
+
+        taskTitles.forEach(title => {
+            title.style.color = text;
+        })
+        
+    } 
+    else if (theme === "dark") {
+
+        text = "#08081b";
+        background = "#f8f8fc";
+        primary = "#504bc5";
+        secondary = "#dd92bf";
+        accent = "#d27486";
+
+
+    }
+
+    changeTheme_set(text, background, primary, secondary, accent);
+
+}
+
+function changeTheme_set(text, background, primary, secondary, accent) {
+
+    document.documentElement.style.setProperty("--text", text);
+    document.documentElement.style.setProperty("--background", background);
+    document.documentElement.style.setProperty("--primary", primary);
+    document.documentElement.style.setProperty("--secondary", secondary);
+    document.documentElement.style.setProperty("--accent", accent);
+
+}
+
+function changeTheme_after(currentTheme) {
+    // what to do after the theme has been changed
+
+    if (currentTheme === "light") {
+        changeThemeDiv.setAttribute("data-current", "dark");
+    }
+    else if (currentTheme === "dark") {
+        changeThemeDiv.setAttribute("data-current", "light");
+    }
+    else {
+        changeThemeDiv.setAttribute("data-current", "light");
+    }
+
+    // changes the icon
+    const moonIcon = document.createElement("i");
+    moonIcon.className = "fa-solid fa-moon";
+
+    const sunIcon = document.createElement("i");
+    sunIcon.className = "fa-solid fa-sun";
+
+    if (currentTheme === "light") {
+        changeThemeBtn.innerHTML = "";
+        changeThemeBtn.appendChild(sunIcon);
+    }
+    else if (currentTheme === "dark") {
+        changeThemeBtn.innerHTML = "";
+        changeThemeBtn.appendChild(moonIcon);
+    }
+
+}
+
 addTask.forEach((task) => {
 
     task.addEventListener("click", () => {
@@ -415,5 +497,12 @@ addTask.forEach((task) => {
         createTask(task.id.split("-")[1]);
 
     })
+
+})
+
+changeThemeBtn.addEventListener("click", () => {
+    let currentTheme = changeThemeDiv.getAttribute("data-current");
+    changeTheme_get(currentTheme)
+    changeTheme_after(currentTheme);
 
 })

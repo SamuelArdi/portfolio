@@ -5,7 +5,7 @@
     --primary: #504bc5;
     --secondary: #dd93c0;
     --accent: #d27384;
-
+    
 }
 
 body {
@@ -368,4 +368,52 @@ body {
 
 .undo > .cancelUndo:hover {
     color: var(--accent);
+}
+
+.changeTheme {
+
+    position: absolute;
+    
+    bottom: 0;
+    right: 0;
+    transform:translate(-50%, -50%)
+
+}
+
+.changeTheme button {
+
+    border: solid;
+    border-width: 0 0 2px 0;
+    border-color: var(--text);
+
+    background-color: transparent;
+    color: var(--text);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition-duration: .2s;
+
+}
+
+.changeTheme[data-current="light"] button:hover {
+    color: var(--primary);
+}
+
+.changeTheme[data-current="light"] button svg, .changeTheme[data-current="dark"] button svg {
+    transition-duration: .2s;
+}
+
+.changeTheme[data-current="light"] button:hover svg{
+    transform: translateY(-5px);
+}
+
+.changeTheme[data-current="dark"] button svg {margin-bottom: 2px;}
+
+.changeTheme[data-current="dark"] button:hover svg {
+
+    transform: translateY(-5px) rotate(90deg);
+    color: rgb(224, 224, 39);
+
 }
