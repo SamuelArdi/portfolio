@@ -388,8 +388,6 @@ body {
     width: 34vw;
     height: 66vh;
 
-    min-height: 23rem;
-    max-height: 50rem;
 
 }
 
@@ -409,9 +407,6 @@ body {
     width: 12vw;
     height: 30vh;
 
-    min-height: 9rem;
-    max-height: 20rem;
-
 }
 
 .background-planet > #moon-moon {
@@ -429,9 +424,6 @@ body {
     
     width: 10vw;
     height: 18vh;
-
-    min-height: 5rem;
-    max-height: 10rem;
 
 }
 
@@ -760,22 +752,22 @@ main {
 
     }
 
-    .contentHeader > h1, .contentText > p {
-        
-        font-size: 2.2rem;
-        
-    }
-
     .contentHeader > h1 {
 
-        font-size: 3.2rem;
+        font-size: 2.8rem;
+
+    }
+
+    .contentText > p {
+
+        font-size: 1.9rem;
 
     }
 
     .contentButton {
 
-        width: 34%;
-        height: 5%;
+        width: 30%;
+        height: 55px;
 
         font-size: 2rem;
 
@@ -809,15 +801,24 @@ main {
 
     }
 
-    .contentHeader > h1, .contentText > p {
-        
-        font-size: 2.1rem;
-        
-    }
-
     .contentHeader > h1 {
 
-        font-size: 3rem;
+        font-size: 2.2rem;
+
+    }
+
+    .contentText > p {
+
+        font-size: 1.5rem;
+
+    }
+
+    .contentButton {
+
+        width: 30%;
+        height: 45px;
+
+        font-size: 1.7rem;
 
     }
 
@@ -885,8 +886,8 @@ main {
 
     .contentButton {
 
-        width: 25%;
-        height: 55px;
+        width: 20%;
+        height: 40px;
 
     }
 
