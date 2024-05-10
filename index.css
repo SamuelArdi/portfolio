@@ -130,7 +130,6 @@ Projects
     border-radius: .3em; 
 
     width: fit-content;
-    
 
     padding-top: 20px;
     padding-left: 20px;
@@ -145,4 +144,11 @@ Projects
     height: 140px;
     width: 230px;
     border-radius: .3em;
+    object-fit: cover;
+}
+
+.project:hover .coverImg {
+
+    object-fit: contain;
+
 }
