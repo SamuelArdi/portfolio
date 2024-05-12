@@ -1,566 +1,190 @@
-@font-face {
-	font-family: Roboto;
-	src: url(./materials/fonts/Roboto/Roboto-Regular.ttf);
+:root {
+
+    /* Light */
+    --textLight: #0e1515;
+    --backgroundLight: #f9fbfb;
+    --primaryLight: #72a19e;
+    --secondaryLight: #afbdca;
+    --accentLight: #8b96b1;
+
+    /* Dark */
+    --textDark: #eaf1f1;
+    --backgroundDark: #040606;
+    --primaryDark: #5e8d8a;
+    --secondaryDark: #354350;
+    --accentDark: #4e5974;
+
 }
 
 body {
-	font-family: Roboto;
 
-	background-color: rgb(24, 24, 24);
-	color: rgb(234, 234, 234);
+    background-color: var(--backgroundLight);
 
-	margin: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: var(--textLight);
+
+    padding: 0;
+    margin: 7px;
+    
 }
 
-:root {
-	--bgColor: white;
-	--hoverColor: rgb(211, 211, 211);
+.sidebars {
+
+    width: 20svw;
+    height: 98svh;
+
+    display: grid;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    gap: 7px;
+
 }
 
-/*
------------------------
-	  NAV BAR
------------------------
-*/
+.sidebars > * {
 
-.habitTracker_navBar {
-	position: absolute;
+    background-color: var(--primaryLight);
+    border-radius: 10px;
 
-	top: auto;
-	left: auto;
-
-	display: flex;
-	flex-direction: column;
-
-	width: 14%;
-	height: max-content;
-
-	border-radius: 1em;
-	border: none;
-
-	padding-bottom: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-
-	gap: 18px;
-	background-color: var(--bgColor);
-}
-
-#pfp {
-	border-radius: 100%;
-}
-
-.habitTracker_navBar h2 {
-	color: #27a074;
-}
-
-.habitTracker_navBar p {
-	margin: 0;
-	margin-top: 20px;
-	color: black;
-}
-
-.habitTracker_navBar img {
-	width: 24px;
-	height: 24px;
-
-	margin-right: 10px;
-
-	vertical-align: calc(100% - 115%);
-}
-
-.habitTracker_navBar a {
-	padding: 5px;
-
-	text-decoration: none;
-	font-size: 1.5em;
-
-	border-radius: .2em;
-
-	color: black;
-}
-
-.habitTracker_navBar a:hover {
-	background-color: var(--hoverColor);
-	color: rgb(255, 0, 64);
-}
-
-.habitTracker_navBar > #source {
-	margin-top: 20%;
-	font-size: small;
-
-	width: fit-content;
-}
-
-.habitTracker_navBar > #source:hover {
-	background-color: inherit;
 }
 
 /*
------------------------
-	MAIN NAV BAR
------------------------
+    SIDEBAR MAIN
 */
 
-.habitTracker_mainNavBar {
-	position:absolute;
+.sidebarMain {
 
-	overflow: hidden;
+    height: 65svh;
 
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	top: auto;
-	left: 17%;
-
-	width: 55%;
-	height: max-content;
-
-	padding-left: 10px;
-	padding-right: 10px;
-
-	border-radius: 1em;
-
-	background-color: var(--bgColor);
-
-	color: black
 }
 
-.habitTracker_mainNavBar input {
-	width: auto;
-	height: 2em;
+.sidebarMain-account {
 
-	margin-right: 5px;
-	margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-bottom: 5px solid var(--backgroundLight);
+    height: 10%;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
-.habitTracker_mainNavBar img {
-	width: 24px;
-	height: 25px;
+.sidebarMain-account > * {
 
-	vertical-align: calc(100% - 118%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 100%;
+
 }
 
-.habitTracker_mainNavBar > #search {
-	margin-right: 5%;
-	background-color: inherit;
-
-	border-radius: .2em;
+.accountImage > #accountImage-img {
+    
+    width: 28px;
+    border-radius: 50%;
+    
 }
 
-.habitTracker_mainNavBar > #searchArea {
-	border: none;
-	border-radius: .3em;
+.accountName {
 
-	font-family: Roboto;
-	font-size: .9em;
-	
-	background-color: var(--hoverColor);
+    font-size: larger;
+    margin-left: 5%;
+    height: 100%;
+
 }
 
-.habitTracker_mainNavBar > #search:hover{
-	background-color: var(--hoverColor);
+.accountSettings {
+
+    margin-left: auto;
+
 }
 
-.habitTracker_mainNavBar button {
-	left: 50%;
-	font-size: 1.3em;
+.sidebarMain-sets {
 
-	padding: 5px;
+    height: 88%;
 
-	background-color: inherit;
-
-	border: none;
-	border-radius: .2em;
-	
-	cursor: pointer;
 }
 
-.habitTracker_mainNavBar button:hover {
-	background-color: var(--hoverColor);
-	color: rgb(255, 0, 64);
+.setsHeader > p {
+
+    margin: 0;
+    padding-top: 5px;
+
+    font-size: larger;
+    font-weight: 600;
+    text-align: center;
+
 }
 
-.freqButtons {
-	margin-left: 10px;
+.setsContent {
+
+    height: 91%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
 }
 
-.habitTracker_mainNavBar > #addHabit {
-	color: rgb(240, 0, 60);
+.setsContent > .set {
+
+    width: 92%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 10px;
+
+    cursor: pointer;
+
 }
 
-.habitTracker_mainNavBar > #addHabit:hover {
-	color: rgb(255, 0, 64);
+.setsContent > .set:hover {
+
+    background-color: var(--primaryDark);
+
 }
+
+.setIcon {
+
+    font-size: x-large;
+
+}
+
+.setName {
+
+    font-size: larger;
+    margin-left: 5%;
+
+}
+
+.setMore {
+
+    text-align: end;
+    font-size: larger;
+
+    width: 10%;
+    margin-left: auto;
+
+    cursor: pointer;
+    border: solid black;
+
+}
+
+
 
 /*
------------------------
-	 MAIN CONTENT
------------------------
+    SIDEBAR EXTRAS
 */
+.sidebarExtra {
 
-.habitTracker_main {
-	position: absolute;
+    height: 31svh;
 
-	overflow: scroll;
-
-	top: 14%;
-	left: 17%;
-
-	border-radius: 1em;
-
-	background-color: var(--bgColor);
-
-	width: 56%;
-	height: 84%;
-
-	color: black;
-}
-
-.habitTracker_main::-webkit-scrollbar {
-	display: none;
-}
-
-.habitTracker_main div {
-	margin-top: 15px;
-
-	padding-left: 10px;
-	padding-right: 10px;
-
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	border: none;
-	border-radius: .3em;
-	
-	cursor: pointer;
-}
-
-.habitTracker_main > div:hover {
-	background-color: #8e000c;
-
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.habitName {
-	font-size: 1.2em;
-	font-weight: 600;
-}
-
-.habitDetail {
-	margin: auto;
-}
-
-.habitStatus {
-	margin-right: 18px;
-}
-
-.moreVert {
-	cursor: pointer;
-}
-
-/*
------------------------
-	HABIT DETAILS
------------------------
-*/
-
-.habitTracker_details {
-	position: absolute;
-
-	overflow: hidden;
-
-	background-color: var(--bgColor);
-	border-radius: 1em;
-
-	top: auto;
-	left: 74%;
-
-	width: 24%;
-	height: 96.5%;
-
-	padding-left: 10px;
-	padding-right: 10px;
-
-	color: black;
-}
-
-.habitTracker_details .details_Top {
-	display: flex;
-	flex-direction: row;
-
-	align-items: center;
-}
-
-.habitTracker_details .details_Top img {
-	width: 24px;
-	height: 24px;
-
-	margin-left: auto;
-}
-
-.habitTracker_details .details_Top p {
-	font-size: 1.5em;
-
-	margin-left: 7px;
-	margin-right: 10px;
-}
-
-
-.habitTracker_details .details_Middle_Labels {
-	display: flex;
-	flex-direction: row;
-
-	padding: 0;
-
-	transform: translate(10%, 0%);
-
-	width:max-content;
-	height: fit-content;
-
-	margin-left: 43%;
-	gap: 22%;
-}
-
-.habitTracker_details .details_Middle {
-	transform: translateY(-8%);
-	
-	align-items: center;
-	gap: 50px
-}
-
-.habitTracker_details .details_Middle div {
-	display: flex;
-	flex-direction: row;
-}
-
-.habitTracker_details .details_Middle .dayStreak_Stats {
-	transform: translateX(100%);
-}
-
-.habitTracker_details .details_Middle .weekStreak_Stats {
-	transform: translateX(51%);
-}
-
-.habitTracker_details .details_Middle .monthStreak_Stats {
-	transform: translateX(21%);
-}
-
-.habitTracker_details .details_Middle h3 {
-	border: solid;
-	border-radius: .3em;
-	border-width: 3px;
-
-	margin-right: 6%;
-	margin-left: 10%;
-
-	width: 30px;
-	padding-top: 2px;
-
-	text-align: center;
-}
-
-.habitTracker_details .editConfirmation {
-	transform: translate(-13%, 250%);
-}
-
-.habitTracker_details .editConfirmation button {
-	visibility: hidden;
-
-	margin-left: 28%;
-
-	font-size: larger;
-
-	background-color: inherit;
-
-	border: none;
-
-	cursor: pointer;
-}
-
-.habitTracker_details .editConfirmation > #cancelEdit {
-	border: solid;
-	border-width: 2px;
-
-	color: rgb(255, 0, 0);
-}
-
-.habitTracker_details .editConfirmation > #cancelEdit:hover {
-	color: rgb(255, 0, 0);
-	background-color: var(--hoverColor);
-}
-
-.habitTracker_details .editConfirmation > #confirmEdit {
-	border: solid;
-	border-width: 2px;
-
-	color: green;
-}
-
-.habitTracker_details .editConfirmation > #confirmEdit:hover {
-	background-color: var(--hoverColor);
-	color: rgb(0, 132, 0);
-}
-
-.habitTracker_details .details_Bottom {
-	display: flexbox;
-
-	margin-top: 40%;
-	margin-right: 2%;
-
-	text-align: end;
-}
-
-.habitTracker_details .details_Bottom button {
-	font-size: larger;
-
-	border: none;
-	border-radius: .2em;
-
-	padding: 7px;
-
-	margin-bottom: 10px;
-	margin-left: 15px;
-
-	background-color: inherit;
-
-	cursor: pointer;
-}
-
-.habitTracker_details .details_Bottom button:hover {
-	background-color: var(--hoverColor);
-	color: rgb(255, 0, 64);
-}
-
-.habitTracker_details .details_Bottom > #completeHabit {
-	border: solid;
-	border-width: 2px;
-
-	color: green;
-}
-
-.habitTracker_details .details_Bottom > #completeHabit:hover {
-	color: rgb(0, 132, 0)
-}
-
-.habitTracker_details .details_Bottom > #editDetails {
-	border: solid;
-	border-width: 2px;
-
-	color: rgb(210, 137, 0);
-}
-
-.habitTracker_details .details_Bottom > #editDetails:hover {
-	color: rgb(219, 142, 0);
-}
-
-.habitTracker_details .details_Bottom > #deleteHabit {
-	font-size: larger;
-	font-weight: bold;
-
-	border: solid;
-	border-width: 2px;
-
-	color: rgb(236, 0, 0);
-}
-
-.habitTracker_details .details_Bottom > #deleteHabit:hover {
-	color: rgb(255, 0, 0)
-}
-
-.habitTracker_details .details_Top > #editHabitName {
-	border: solid;
-	border-width: 3px;
-	border-radius: 5px;
-
-	height: 25px;
-
-	margin-top: 5px;
-}
-
-.habitTracker_details .details_Top > #editStreak {
-	border: solid;
-	border-width: 3px;
-	border-radius: 5px;
-
-	width: 25px;
-	height: 25px;
-
-	font-size: 1.5em;
-
-	text-align: center;
-
-	margin-top: 5px;
-}
-
-.habitTracker_details .details_Middle .dayStreakContainer .editDayStreak {
-	border: solid;
-	border-width: 3px;
-	border-radius: .3em;
-
-	width: 30px;
-	height: 30px;
-
-	margin-left: 3.95em;
-	margin-top: 18px;
-
-	padding-top: 2px;
-
-	font-size: 1.1em;
-	font-weight: bold;
-	
-	text-align: center;
-}
-
-.habitTracker_details .details_Middle .dayStreakContainer > #editDayStreak_longest {
-	margin-left: 3.1em;
-}
-
-.habitTracker_details .details_Middle .weekStreakContainer .editWeekStreak {
-	border: solid;
-	border-width: 3px;
-	border-radius: .3em;
-
-	width: 30px;
-	height: 30px;
-
-	margin-left: 3em;
-	margin-top: 18px;
-
-	padding-top: 2px;
-
-	font-size: 1.1em;
-	font-weight: bold;
-
-	text-align: center;
-}
-
-.habitTracker_details .details_Middle .weekStreakContainer > #editWeekStreak_longest {
-	margin-left: 3.1em;
-}
-
-.habitTracker_details .details_Middle .monthStreakContainer .editMonthStreak {
-	border: solid;
-	border-width: 3px;
-	border-radius: .3em;
-
-	width: 30px;
-	height: 30px;
-
-	margin-left: 2.5em;
-	margin-top: 18px;
-
-	padding-top: 2px;
-
-	font-size: 1.1em;
-	font-weight: bold;
-
-	text-align: center;
-}
-
-.habitTracker_details .details_Middle .monthStreakContainer > #editMonthStreak_longest {
-	margin-left: 3.1em;
 }

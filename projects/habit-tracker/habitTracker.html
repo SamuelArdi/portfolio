@@ -1,127 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Tracker</title>
+    <title>WoWHabit</title>
 
     <link rel="stylesheet" href="./habitTracker.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="./habitTracker.js"></script>
+
+    <!-- Font awesome library -->
+    <script src="https://kit.fontawesome.com/857aaee575.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-    <div class="habitTracker_container">
+    <div class="sidebars container">
 
-        <div class="habitTracker_navBar">
-            <h2>Habit Tracker</h2>
+        <div class="sidebarMain container">
+    
+            <div class="sidebarMain-account container">
 
-            <a href="#">
-                <img src="./materials/images/navBar/pfp.jpeg" id="pfp">
-                Profile
-            </a>
-
-            <a href="#">
-                <img src="./materials/images/navBar/to-do-list.png">    
-                All Habits
-            </a>
-            
-            <p>Preferences</p>
-            <a href="#">
-                <img src="./materials/images/navBar/manage-habits.png">
-                Manage Habits
-            </a>
-
-            <a href="#">
-                <img src="./materials/images/navBar/setting.png">
-                Settings
-            </a>
-
-            <a href="#">
-                <img src="./materials/images/navBar/share.png">
-                Resources
-            </a>
-
-            <a href="https://github.com/SamuelArdi/portfolio/tree/main/projects/habit-tracker" id="source">
-                Source Code
-            </a>
-        </div>
-
-        <div class="habitTracker_mainNavBar">
-            <h2>All Habits</h2>
-
-            <input type="text" placeholder="Search" id="searchArea">
-            <button id="search">
-                <img src="./materials/images/mainNavBar/search.png">
-            </button>
-
-            <button id="date" class="freqButtons">
-                <img src="./materials/images/mainNavBar/calendar.png">
-                Today
-            </button>
-
-            <button id="sort" class="freqButtons">
-                <img src="./materials/images/mainNavBar/sort.png">
-                Alphabetically
-            </button>
-
-            <button id="addHabit" class="freqButtons">
-                <img src="./materials/images/mainNavBar/plus.png">
-                Add Habit
-            </button>
-        </div>
-        
-        <div class="habitTracker_main"></div> <!-- Leave this blank -->
-
-        <div class="habitTracker_details">
-
-            <div class="details_Top">
-                <h2 id="detailName">Habit Name</h2>
-
-
-                <img src="./materials/images/habitDetails/streak.png" id="streakIcon">
-                <p id="streak">0</p>
-            </div>
-
-            <div class="details_Middle_Labels">
-                <h3>Current</h3>
-                <h3>Longest</h3>
-            </div>
-
-            <div class="details_Middle">
-                <div class="dayStreakContainer">
-                    <h2 id="dayStreak">Day Streak</h2>
-                    <h3 id="dayStreak_current" class="dayStreak_Stats">0</h3>
-                    <h3 id="dayStreak_longest" class="dayStreak_Stats">0</h3>
+                <div class="accountImage">
+                    <img src="./materials/images/pfp.png" id="accountImage-img">
                 </div>
 
-                <div class="weekStreakContainer">
-                    <h2 id="weekStreak">Week Streak</h2>
-                    <h3 id="weekStreak_current" class="weekStreak_Stats">0</h3>
-                    <h3 id="weekStreak_longest" class="weekStreak_Stats">0</h3>
+                <div class="accountName">
+                    <p>Avterion Avershi</p>
                 </div>
-                
-                <div class="monthStreakContainer">
-                    <h2 id="monthStreak">Month Streak</h2>
-                    <h3 id="monthStreak_current" class="monthStreak_Stats">0</h3>
-                    <h3 id="monthStreak_longest" class="monthStreak_Stats">0</h3>
+
+                <div class="accountSettings">
+                    <i class="fa-solid fa-gear"></i>
                 </div>
+
             </div>
 
-            <div class="editConfirmation">
-                <button id="cancelEdit">Cancel</button>
-                <button id="confirmEdit">Confirm</button>
-            </div>
+            <div class="sidebarMain-sets container">
 
-            <div class="details_Bottom">
-                <button id="editDetails">Edit Habit</button>
-                <button id="completeHabit">Complete Habit</button>
-                <button id="deleteHabit">Delete Habit</button>
+                <div class="setsHeader">
+                    <p>Habit Sets</p>
+                </div>
+
+                <div class="setsContent">
+
+                    <div class="set" id="set-1">
+
+                        <div class="setIcon">
+                            <p>🧠</p>
+                        </div>
+
+                        <div class="setName">
+                            <p>For Mental</p>
+                        </div>
+
+                        <div class="setMore">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
             
+        </div>
+    
+        <div class="sidebarExtra container">
+
+
+
         </div>
 
     </div>
 
-    <script src="./habitTracker.js"></script>
 </body>
 </html>
